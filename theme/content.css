@@ -443,10 +443,6 @@ blockquote.uncited {
 	padding-top: 25px;
 }
 
-blockquote + br {
-	display: none;
-}
-
 /* Code block */
 dl.codebox {
 	margin-bottom: 1.1em;
@@ -481,10 +477,6 @@ dl.codebox code {
 	line-height: 1.3em;
 	color: #8b8b8b;
 	margin: 2px 0;
-}
-
-dl.codebox + br {
-	display: none;
 }
 
 .syntaxbg		{ color: #FFFFFF; }
