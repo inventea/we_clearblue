@@ -2,10 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9" />
-	<meta name="description" content="" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-language" content="{S_USER_LANG}" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="resource-type" content="document" />
+	<meta name="distribution" content="global" />
 	<meta name="keywords" content="" />
-	<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+	<meta name="description" content="" />
 	{META}
 	
 	<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
@@ -45,24 +48,21 @@
 		var style_cookie_settings = '{A_COOKIE_SETTINGS}';
 		var onload_functions = new Array();
 		var onunload_functions = new Array();
-
-		<!-- IF S_USER_PM_POPUP -->
-			if ({S_NEW_PM})
-			{
-				var url = '{UA_POPUP_PM}';
-				window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-			}
+	
+		<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+			var url = '{UA_POPUP_PM}';
+			window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 		<!-- ENDIF -->
-
+	
 		/**
 		* Find a member
 		*/
 		function find_username(url)
 		{
-			popup(url, 960, 570, '_usersearch');
+			popup(url, 760, 570, '_usersearch');
 			return false;
 		}
-
+	
 		/**
 		* New function for handling multiple calls to window.onload and window.unload by pentapenguin
 		*/
@@ -73,7 +73,7 @@
 				eval(onload_functions[i]);
 			}
 		}
-
+	
 		window.onunload = function()
 		{
 			for (var i = 0; i < onunload_functions.length; i++)
@@ -81,11 +81,11 @@
 				eval(onunload_functions[i]);
 			}
 		}
-
+	
 	// ]]>
 	</script>
 	
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+	<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 </head>
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
@@ -125,7 +125,7 @@
 				<li><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
 				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
 				<!-- IF not S_IS_BOT-->
-					<li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li>
+					<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
 					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
 					<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
 					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->

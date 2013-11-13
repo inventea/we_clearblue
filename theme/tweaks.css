@@ -94,9 +94,13 @@ dl.icon {
 	margin: 0 -2px 0px -1px;
 }
 
-/* Profile icons on memberlist */
-*:first-child+html {} .forums .profile-icons li {
-	display: inline;
+/* Headerbar height fix for IE7 and below */
+* html #site-description p {
+	margin-bottom: 1.0em;
+}
+
+*:first-child+html #site-description p {
+	margin-bottom: 1.0em;
 }
 
 /* Ugly structure hacks for IE6 */
