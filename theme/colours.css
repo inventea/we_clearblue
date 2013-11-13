@@ -176,28 +176,33 @@ dl.details dd {
 	color: #888;
 }
 
-.error, div.rules {
-	background-color: #ECD5D8;
+.error {
+	background-color: #f4e1e6;
 	background-image: none;
 	border: 1px solid #deb7b7;
-	color: #bc2a4d;
+	color: #b53d5a;
 }
 
 .reported {
-	background-color: #F7ECEF !important;
+	background-color: #f7ecef !important;
+}
+
+.reported .bg2 {
+	background-color: #f4e1e6 !important;
 }
 
 li.reported:hover {
 	background-color: #f2dfe1 !important;
 }
 
+div.rules {
+	background-color: #f4e1e6;
+	color: #b53d5a;
+}
+
 p.rules {
 	background-color: #ECD5D8;
 	background-image: none;
-}
-
-div.rules a, p.rules a {
-	color: #bc2a4d;
 }
 
 /*  	
@@ -640,7 +645,7 @@ Colours and backgrounds for cp.css
 /* Main CP box
 ----------------------------------------*/
 #cp-main h3, #cp-main hr, #cp-menu hr {
-	border-color: #A4B3BF;
+	border-color: #b7c9d7;
 }
 
 #cp-main .panel li.row {
@@ -804,24 +809,24 @@ dl.mini dt {
 }
 
 /* PM marking colours */
-.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #BC2A4D;
 	border-right-color: #BC2A4D;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour {
+.pmlist .pm_marked_colour, .pm_marked_colour {
 	border-color: #FF6600;
 }
 
-.pmlist li.pm_replied_colour, .pm_replied_colour {
+.pmlist .pm_replied_colour, .pm_replied_colour {
 	border-color: #A9B8C2;
 }
 
-.pmlist li.pm_friend_colour, .pm_friend_colour {
+.pmlist .pm_friend_colour, .pm_friend_colour {
 	border-color: #5D8FBD;
 }
 
-.pmlist li.pm_foe_colour, .pm_foe_colour {
+.pmlist .pm_foe_colour, .pm_foe_colour {
 	border-color: #000000;
 }
 

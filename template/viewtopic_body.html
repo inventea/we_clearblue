@@ -15,12 +15,16 @@
 
 <!-- IF S_FORUM_RULES -->
 	<div class="rules">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
 		<!-- IF U_FORUM_RULES -->
 			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
 		<!-- ELSE -->
-			<strong>{L_FORUM_RULES}</strong><br />
+			<strong class="rules-header">{L_FORUM_RULES}</strong>
 			{FORUM_RULES}
 		<!-- ENDIF -->
+
+		<span class="corners-bottom"><span></span></span></div>
 	</div>
 <!-- ENDIF -->
 

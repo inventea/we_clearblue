@@ -11,8 +11,10 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th colspan="2">{L_IMPORTANT_NEWS}</th>
-					<th class="last-post">{L_LAST_POST}</th>
+					<tr>
+						<th colspan="2">{L_IMPORTANT_NEWS}</th>
+						<th class="last-post">{L_LAST_POST}</th>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN topicrow -->
@@ -23,10 +25,9 @@
 								<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 								<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
 							</td>
-							<td class="topic bg2">
-								<a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a>
+							<td class="bg2">
 								<p>{topicrow.LAST_POST_TIME}</p>
-								<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+								<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} <a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a></p>
 							</td>
 						</tr>
 					<!-- END topicrow -->

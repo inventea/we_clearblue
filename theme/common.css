@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+html {
+	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
+   height: 101%;
+}
+
 body {
 	background: #fff url("{T_THEME_PATH}/images/background.png") repeat-x;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
@@ -325,6 +330,14 @@ span.corners-bottom span {
 	margin: 0 -10px;
 }
 
+.rules span.corners-top {
+	margin: 0 -10px 5px -10px;
+}
+
+.rules span.corners-bottom {
+	margin: 5px -10px 0 -10px;
+}
+
 /* Horizontal lists
 ----------------------------------------*/
 ul.linklist {
@@ -605,6 +618,7 @@ li.pagination {
 
 .error {
 	color: #bcbcbc;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 11px !important;
 	padding: 5px 7px;
@@ -620,11 +634,16 @@ li.reported:hover {
 
 div.rules {
 	background-color: #ececec;
-	padding: 10px 15px;
-	margin: 10px 0;
-	line-height: 1.3em;
 	color: #bcbcbc;
+	padding: 0 10px;
+	margin-bottom: 10px;
+	line-height: 1.3em;
 	font-size: 1.1em;
+}
+
+.rules-header {
+	margin-bottom: 4px;
+	display: block;
 }
 
 div.rules ul, div.rules ol {

@@ -1,13 +1,18 @@
 <!-- INCLUDE overall_header.html -->
 
+<script type="text/javascript">
+// <![CDATA[
+	onload_functions.push('document.getElementById("keywords").focus();');
+// ]]>
+</script>
+
 <h2>{L_SEARCH}</h2>
 
 <form method="get" action="{S_SEARCH_ACTION}">
 
 <div class="panel">
 	<div class="inner"><span class="corners-top"><span></span></span>
-		
-	<h2>{L_SEARCH_QUERY}</h2>
+	<h3>{L_SEARCH_QUERY}</h3>
 
 	<fieldset>
 	<dl>
@@ -28,7 +33,7 @@
 <div class="panel bg2">
 	<div class="inner"><span class="corners-top"><span></span></span>
 
-	<h2>{L_SEARCH_OPTIONS}</h2>
+	<h3>{L_SEARCH_OPTIONS}</h3>
 
 	<fieldset>
 	<dl>
@@ -97,7 +102,9 @@
 	<div class="forums-wrapper">
 		<table class="forums">
 			<thead>
-				<th colspan="2">{L_RECENT_SEARCHES}</th>
+				<tr>
+					<th colspan="2">{L_RECENT_SEARCHES}</th>
+				</tr>
 			</thead>
 			<tbody>
 				<!-- BEGIN recentsearch -->

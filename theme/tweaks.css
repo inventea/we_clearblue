@@ -2,6 +2,7 @@
 These style definitions are mainly IE specific 
 tweaks required due to its poor CSS support.
 -------------------------------------------------*/
+
 * html table, * html select, * html input { font-size: 100%; }
 * html hr { margin: 0; }
 * html span.corners-top, * html span.corners-bottom { background-image: url("{T_THEME_PATH}/images/corners_left.gif"); }
@@ -74,6 +75,10 @@ dl.icon {
 	width: 25%;
 }
 
+* html .pm_border {
+	margin-left: -4px;
+}
+
 /* Correctly clear floating for details on profile view */
 *:first-child+html dl.details dd {
 	margin-left: 30%;
@@ -87,4 +92,23 @@ dl.icon {
 
 * html .forumbg table.table1 {
 	margin: 0 -2px 0px -1px;
+}
+
+/* Profile icons on memberlist */
+*:first-child+html {} .forums .profile-icons li {
+	display: inline;
+}
+
+/* Ugly structure hacks for IE6 */
+* html #wrapper {
+	width: 980px;
+}
+
+* html #footer {
+	padding: 10px;
+	position: static;
+}
+
+* html #footer-fixed {
+	display: none;
 }
