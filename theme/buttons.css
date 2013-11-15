@@ -10,6 +10,10 @@
 	height: auto;
 }
 
+#viewfolder .buttons {
+	
+}
+
 /* Rollover state */
 .buttons div {
 	float: left;

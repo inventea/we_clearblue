@@ -4,33 +4,34 @@
 		<div id="footer-inner">
 			<div style="float: left;">
 				<p class="breadcrumbs">{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &rsaquo; <a href="{navlinks.U_VIEW_FORUM}" title="{navlinks.FORUM_NAME}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
-				<p>Powered by <a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group.</p>
+				<p>{CREDIT_LINE}</p>
 				<!-- IF TRANSLATION_INFO --><p>{TRANSLATION_INFO}</p><!-- ENDIF -->
 				<!-- IF DEBUG_OUTPUT --><p>{DEBUG_OUTPUT}</p><!-- ENDIF -->
-				<p>Style <em>we_clearblue</em> created by <a href="http://weeb.pl/" title="/dev/weeb">weeb</a>.</p>
+				<p>Style <em>we_clearblue</em> created by <a href="http://inventia.io/" title="Premium phpBB styles. HTML5 & CSS3 templates.">Inventia</a>.</p>
 			</div>
 			
-			<!-- IF S_ENABLE_FEEDS -->
-				<ul class="rightside">
+			<ul class="rightside">
+				<!-- IF S_ENABLE_FEEDS -->
 					<!-- IF S_ENABLE_FEEDS_OVERALL --><li class="feed"><a href="{U_FEED}" title="{L_FEED} - {SITENAME}">{L_FEED}</a></li><!-- ENDIF -->
 					<!-- IF S_ENABLE_FEEDS_NEWS --><li class="feed"><a href="{U_FEED}?mode=news" title="{L_FEED} - {L_FEED_NEWS}">{L_FEED_NEWS}</a></li><!-- ENDIF -->
 					<!-- IF S_ENABLE_FEEDS_FORUMS --><li class="feed"><a href="{U_FEED}?mode=forums" title="{L_FEED} - {L_ALL_FORUMS}">{L_ALL_FORUMS}</a></li><!-- ENDIF -->
 					<!-- IF S_ENABLE_FEEDS_TOPICS --><li class="feed"><a href="{U_FEED}?mode=topics" title="{L_FEED} - {L_FEED_TOPICS_NEW}">{L_FEED_TOPICS_NEW}</a></li><!-- ENDIF -->
 					<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><li class="feed"><a href="{U_FEED}?mode=topics_active" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}">{L_FEED_TOPICS_ACTIVE}</a></li><!-- ENDIF -->
-				</ul>
-			<!-- ENDIF -->
+				<!-- ENDIF -->
+				<li class="topic-link icon-unsubscribe"><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li>
+			</ul>
 			
-		<!-- IF not S_IS_BOT and (S_ENABLE_FEEDS_FORUM and S_FORUM_ID or S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID or S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC) -->
-            <ul class="rightside" <!-- IF S_ENABLE_FEEDS -->style="margin-right: 50px;"<!-- ENDIF -->>
-						<!-- IF S_ENABLE_FEEDS -->
-							<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><li class="feed"><a href="{U_FEED}?f={S_FORUM_ID}" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}">{FORUM_NAME}</a></li><!-- ENDIF -->
-							<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><li class="feed"><a href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}">{TOPIC_TITLE}</a></li><!-- ENDIF -->
-						<!-- ENDIF -->
-						
-						<!-- IF S_WATCH_FORUM_LINK --><li class="topic-link <!-- IF S_WATCHING_FORUM --> icon-unsubscribe<!-- ELSE --> icon-subscribe<!-- ENDIF -->"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-						<!-- IF U_WATCH_TOPIC --><li class="topic-link <!-- IF S_WATCHING_TOPIC --> icon-unsubscribe<!-- ELSE --> icon-subscribe<!-- ENDIF -->"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BOOKMARK_TOPIC --><li class="topic-link icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BUMP_TOPIC --><li class="topic-link icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF not S_IS_BOT and (S_ENABLE_FEEDS_FORUM and S_FORUM_ID or S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID or S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC) -->
+				<ul class="rightside" style="margin-right: 50px;">
+					<!-- IF S_ENABLE_FEEDS -->
+						<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><li class="feed"><a href="{U_FEED}?f={S_FORUM_ID}" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}">{FORUM_NAME}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><li class="feed"><a href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}">{TOPIC_TITLE}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+					
+					<!-- IF S_WATCH_FORUM_LINK --><li class="topic-link <!-- IF S_WATCHING_FORUM --> icon-unsubscribe<!-- ELSE --> icon-subscribe<!-- ENDIF -->"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+					<!-- IF U_WATCH_TOPIC --><li class="topic-link <!-- IF S_WATCHING_TOPIC --> icon-unsubscribe<!-- ELSE --> icon-subscribe<!-- ENDIF -->"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BOOKMARK_TOPIC --><li class="topic-link icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BUMP_TOPIC --><li class="topic-link icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
 				</ul>
 			<!-- ENDIF -->
 		</div>

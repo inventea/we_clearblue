@@ -99,10 +99,6 @@ p.right {
 
 #account {
 	background: url("{T_THEME_PATH}/images/account.png") repeat-x;
-	-webkit-border-bottom-right-radius: 8px;
-	-webkit-border-bottom-left-radius: 8px;
-	-moz-border-radius-bottomright: 8px;
-	-moz-border-radius-bottomleft: 8px;
 	border-bottom-right-radius: 8px;
 	border-bottom-left-radius: 8px;
 	height: 38px;
@@ -150,8 +146,6 @@ p.right {
 
 #main-navigation {
 	background: url("{T_THEME_PATH}/images/navigation.png") repeat-x;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 	height: 45px;
 	line-height: 45px;
@@ -186,6 +180,8 @@ p.right {
 /* Site name and description
 --------------------------------------------- */
 #site-description {
+	min-width: 900px;
+	max-width: 65%;
 	margin-top: 60px;
 	margin-left: 75px;
 	position: absolute;

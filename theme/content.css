@@ -746,10 +746,6 @@ dl.pmlist dd {
 /* Forums table */
 .forums-wrapper {
 	background: url("{T_THEME_PATH}/images/navigation.png") repeat-x;
-	-webkit-border-top-left-radius: 8px;
-	-webkit-border-top-right-radius: 8px;
-	-moz-border-radius-topleft: 8px;
-	-moz-border-radius-topright: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
