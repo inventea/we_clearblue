@@ -1,6 +1,6 @@
 /*  phpBB3 Style Sheet
     --------------------------------------------------------------
-	Style name:			we_universal
+	Style name:			we_clearblue
 	Based on style:		prosilver (the default phpBB 3.0.x style)
 	Original author:	Tom Beddard ( http://www.subblue.com/ )
 	Modified by:		phpBB Group ( https://www.phpbb.com/ )
@@ -17,4 +17,4 @@
 @import url("tweaks.css");
 @import url("colours.css");
 @import url("font-awesome.min.css");
-@import url("we_universal.css");
+@import url("we_clearblue.css");
