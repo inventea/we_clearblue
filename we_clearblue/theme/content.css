@@ -1,3 +1,6 @@
+/* Content Styles
+---------------------------------------- */
+
 ul.topiclist {
 	display: block;
 	list-style-type: none;
@@ -46,16 +49,19 @@ ul.topiclist dfn {
 	width: 990px;
 }
 
-.row a.subforum {
+ul.topiclist li.row dt a.subforum {
 	background-image: none;
 	background-position: 0 50%;
 	background-repeat: no-repeat;
+	position: relative;
+	white-space: nowrap;
 	padding: 0 0 0 12px;
 }
 
 .forum-image {
-	width: 50px;
-	padding-right: 0 !important;
+	float: left;
+	padding-top: 5px;
+	margin-right: 5px;
 }
 
 li.row {
@@ -120,7 +126,7 @@ dl.icon dt {
 }
 
 dd.posts, dd.topics, dd.views {
-	width: 9%;
+	width: 8%;
 	text-align: center;
 	line-height: 2.2em;
 	font-size: 1.2em;
@@ -136,6 +142,57 @@ dl.icon dt ul {
 dl.icon dt li {
 	display: list-item;
 	list-style-type: inherit;
+}
+
+dd.lastpost {
+	width: 25%;
+	font-size: 1.1em;
+}
+
+dd.redirect {
+	font-size: 1.1em;
+	line-height: 2.5em;
+}
+
+dd.moderation {
+	font-size: 1.1em;
+}
+
+dd.lastpost span, ul.topiclist dd.searchby span, ul.topiclist dd.info span, ul.topiclist dd.time span, dd.redirect span, dd.moderation span {
+	display: block;
+	padding-left: 5px;
+}
+
+dd.time {
+	width: auto;
+	line-height: 200%;
+	font-size: 1.1em;
+}
+
+dd.extra {
+	width: 12%;
+	line-height: 200%;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+dd.mark {
+	float: right !important;
+	width: 9%;
+	text-align: center;
+	line-height: 200%;
+	font-size: 1.2em;
+}
+
+dd.info {
+	width: 30%;
+}
+
+dd.option {
+	width: 15%;
+	line-height: 200%;
+	text-align: center;
+	font-size: 1.1em;
 }
 
 dd.searchby {
@@ -162,7 +219,6 @@ ul.topiclist dd.searchextra {
 	height: 28px;
 	min-height: 28px;
 }
-
 div[class].topic-actions {
 	height: auto;
 }
@@ -172,14 +228,19 @@ div[class].topic-actions {
 .postbody {
 	padding: 0;
 	line-height: 1.48em;
-	color: #333;
-	width: 77%;
-	float: right;
+	color: #333333;
+	width: 76%;
+	float: left;
 	clear: both;
 }
 
 .postbody .ignore {
 	font-size: 1.1em;
+}
+
+.postbody h3.first {
+	/* The first post on the page uses this */
+	font-size: 1.7em;
 }
 
 .postbody h3 {
@@ -203,7 +264,7 @@ div[class].topic-actions {
 }
 
 .search .postbody {
-	width: 73%
+	width: 68%
 }
 
 /* Topic review panel
@@ -239,13 +300,15 @@ div[class].topic-actions {
 
 /* MCP Post details
 ----------------------------------------*/
-#post_details {
+#post_details
+{
 	/* This will only work in IE7+, plus the others */
 	overflow: auto;
 	max-height: 300px;
 }
 
-#expand {
+#expand
+{
 	clear: both;
 }
 
@@ -267,23 +330,12 @@ div[class].topic-actions {
 	border-bottom: 1px solid #CCCCCC;
 	font-size: 1.6em;
 	margin-top: 0.5em;
-	margin-bottom: 0.3em;
-	padding-bottom: 0.3em;
-}
-
-
-.content h2 {
-	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
 }
 
-.content pre {
-	font-size: 1.1em;
-}
-
 .panel h3 {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	margin: 0.5em 0;
 }
 
 .panel p {
@@ -350,20 +402,13 @@ p.author {
 /* Post signature */
 .signature {
 	margin-top: 1.5em;
-	padding-top: 0.3em;
+	padding-top: 0.2em;
 	font-size: 1.1em;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #CCCCCC;
 	clear: left;
 	line-height: 140%;
 	overflow: hidden;
 	width: 100%;
-}
-
-#viewprofile .signature {
-	border-top: none;
-	margin: 0;
-	padding-top: 0;
-	padding-bottom: 5px;
 }
 
 dd .signature {
@@ -385,12 +430,11 @@ dd .signature {
 /* Post noticies */
 .notice {
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
-	background: #f3dddd;
-	border: 1px solid #deb7b7;
 	width: auto;
-	margin: 10px 0;
-	padding: 5px;
+	margin-top: 1.5em;
+	padding-top: 0.2em;
 	font-size: 1em;
+	border-top: 1px dashed #CCCCCC;
 	clear: left;
 	line-height: 130%;
 }
@@ -409,7 +453,7 @@ blockquote {
 	background: #ebebeb none 6px 8px no-repeat;
 	border: 1px solid #dbdbdb;
 	font-size: 0.95em;
-	margin: 0.5em 1px 1.1em 25px;
+	margin: 0.5em 1px 0 25px;
 	overflow: hidden;
 	padding: 5px;
 }
@@ -445,7 +489,6 @@ blockquote.uncited {
 
 /* Code block */
 dl.codebox {
-	margin-bottom: 1.1em;
 	padding: 3px;
 	background-color: #FFFFFF;
 	border: 1px solid #d8d8d8;
@@ -692,20 +735,19 @@ fieldset.polls dd div {
 	/* Also see tweaks.css */
 	margin: 5px 0 10px 0;
 	min-height: 80px;
-	color: #666;
-	border-right: 1px solid #fff;
+	color: #666666;
+	border-left: 1px solid #FFFFFF;
 	width: 22%;
-	float: left;
+	float: right;
 	display: inline;
-	font-size: 11px;
 }
-
 .pm .postprofile {
-	border-right: 1px solid #ddd;
+	border-left: 1px solid #DDDDDD;
 }
 
 .postprofile dd, .postprofile dt {
-	line-height: 15px;
+	line-height: 1.2em;
+	margin-left: 8px;
 }
 
 .postprofile strong {
@@ -713,7 +755,7 @@ fieldset.polls dd div {
 	color: #000000;
 }
 
-.avatar img {
+.avatar {
 	border: none;
 	margin-bottom: 3px;
 }
@@ -726,7 +768,7 @@ fieldset.polls dd div {
 
 /* Poster profile used by search*/
 .search .postprofile {
-	width: 26%;
+	width: 30%;
 }
 
 /* pm list in compose message if mass pm is enabled */
@@ -741,86 +783,4 @@ dl.pmlist dt textarea {
 dl.pmlist dd {
 	margin-left: 61% !important;
 	margin-bottom: 2px;
-}
-
-/* Forums table */
-.forums-wrapper {
-	background: url("{T_THEME_PATH}/images/navigation.png") repeat-x;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-}
-
-.forums {
-	border-bottom: 3px solid #cdcdcd;
-	border-collapse: collapse;
-	width: 100%;
-	margin-bottom: 15px;
-	text-align: center;
-}
-
-.forums th {
-	padding: 10px 0;
-	text-transform: uppercase;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-}
-
-.forums td {
-	border-top: 1px solid #fff;
-	padding: 8px;
-}
-
-.forums p {
-	margin: 0;
-	line-height: 16px;
-}
-
-.forums .forum, .forums .topic {
-	text-align: left;
-}
-
-.forums .icon {
-	background: 50% 50% no-repeat;
-	width: 40px;
-}
-
-/* Topic alternative icons */
-.forums .icon img {
-	margin-top: 16px;
-	margin-right: 18px;
-}
-
-.forums .statistics 	{ width: 12%; }
-.forums .last-post 		{ width: 20%; }
-.forums .posts 			{ width: 8%; }
-.forums .location 		{ width: 17%; }
-.forums .group 			{ width: 30%; }
-.forums .forum-location { width: 27%; }
-.forums .ip				{ width: 13%; }
-.forums .mark 			{ width: 70px; }
-.forums .input			{ width: 25px; }
-.forums .profile		{ width: 155px; }
-.forums .joined, .forums .active {
-	width: 170px;
-}
-
-.forums .profile-icons {
-	margin: 0;
-	padding: 0;
-}
-
-.forums .profile-icons li {
-	margin: 3px;
-	float: none;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.forums .author {
-	float: left;
-}
-
-.forums .pagination {
-	margin: 0;
 }

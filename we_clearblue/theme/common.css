@@ -1,35 +1,50 @@
+/* General Markup Styles
+---------------------------------------- */
+
 * {
+	/* Reset browsers default margin, padding and font sizes */
 	margin: 0;
 	padding: 0;
 }
 
 html {
+	font-size: 100%;
 	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
-   height: 101%;
+	height: 101%;
 }
 
 body {
-	background: #fff url("{T_THEME_PATH}/images/background.png") repeat-x;
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
+	font-family: Verdana, Helvetica, Arial, sans-serif;
 	color: #828282;
+	background-color: #FFFFFF;
+	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
 	font-size: 10px;
+	margin: 0;
+	padding: 12px 0;
 }
 
 h1 {
 	/* Forum name */
-	font-family: Georgia, "Times New Roman", serif;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-right: 200px;
 	color: #FFFFFF;
+	margin-top: 15px;
 	font-weight: bold;
 	font-size: 2em;
 }
 
 h2 {
 	/* Forum header titles */
-	font-family: Georgia, "Times New Roman", serif;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #3f3f3f;
-	font-size: 26px;
-	margin-bottom: 10px;
+	font-size: 2em;
+	margin: 0.8em 0 0.2em 0;
+}
+
+h2.solo {
+	margin-bottom: 1em;
 }
 
 h3 {
@@ -40,7 +55,7 @@ h3 {
 	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 3px;
 	padding-bottom: 2px;
-	font-size: 11px;
+	font-size: 1.05em;
 	color: #989898;
 	margin-top: 20px;
 }
@@ -48,12 +63,12 @@ h3 {
 h4 {
 	/* Forum and topic list titles */
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
-	font-size: 14px;
+	font-size: 1.3em;
 }
 
 p {
 	line-height: 1.3em;
-	font-size: 11px;
+	font-size: 1.1em;
 	margin-bottom: 1.5em;
 }
 
@@ -84,163 +99,96 @@ p.right {
 	text-align: right;
 }
 
-/* Structure
+/* Main blocks
 ---------------------------------------- */
-#wrapper, #footer-inner {
-	min-width: 980px;
-	max-width: 70%;
-	margin: auto;
+#wrap {
+	padding: 0 20px;
+	min-width: 650px;
 }
 
-#simple-wrapper {
-	background: #fff;
-	padding: 10px 15px;
+#simple-wrap {
+	padding: 6px 10px;
 }
 
-#account {
-	background: url("{T_THEME_PATH}/images/account.png") repeat-x;
-	border-bottom-right-radius: 8px;
-	border-bottom-left-radius: 8px;
-	height: 38px;
-	line-height: 38px;
+#page-body {
+	margin: 4px 0;
+	clear: both;
 }
 
-#illustration {
-	background: url("{T_THEME_PATH}/images/illustration.png") top right no-repeat;
-	height: 199px;
-	margin: -6px auto 0;
+#page-footer {
+	clear: both;
 }
 
-#container {
-	margin: 20px 0;
+#page-footer h3 {
+	margin-top: 20px;
 }
 
-#footer {
-	padding: 18px 0;
-	position: absolute;
-}
-
-/* Navigation
---------------------------------------------- */
-#account, #main-navigation {
-	padding: 0 22px;
-}
-
-#account ul {
-	list-style: none;
-}
-
-#account li {
-	display: inline-block;
-	white-space: nowrap;
-	font-size: 11px;
-}
-
-#account li + li {
-	margin-left: 15px;
-}
-
-#account, #account li a, #primary-navigation li a {
-	color: #fbfbfb;
-}
-
-#main-navigation {
-	background: url("{T_THEME_PATH}/images/navigation.png") repeat-x;
-	border-radius: 8px;
-	height: 45px;
-	line-height: 45px;
-}
-
-#primary-navigation li {
-	border-right: 1px solid #102435;
-	padding-right: 14px;
+#logo {
 	float: left;
-	display: block;
-	font-size: 11px;
-	font-weight: bold;
+	width: auto;
+	padding: 10px 13px 0 10px;
 }
 
-#primary-navigation li:last-child {
-	border-right: none;
+a#logo:hover {
+	text-decoration: none;
 }
 
-#primary-navigation li + li {
-	border-left: 1px solid #1c3e5c;
-	padding-left: 14px;
-}
-
-.icons {
-	padding: 16px 0;
-}
-
-.icons li + li {
-	margin-left: 5px;
-}
-
-/* Site name and description
+/* Search box
 --------------------------------------------- */
+#search-box {
+	color: #FFFFFF;
+	position: relative;
+	margin-top: 30px;
+	margin-right: 5px;
+	display: block;
+	float: right;
+	text-align: right;
+	white-space: nowrap; /* For Opera */
+}
+
+#search-box #keywords {
+	width: 95px;
+	background-color: #FFF;
+}
+
+#search-box input {
+	border: 1px solid #b0b0b0;
+}
+
+/* .button1 style defined later, just a few tweaks for the search button version */
+#search-box input.button1 {
+	padding: 1px 5px;
+}
+
+#search-box li {
+	text-align: right;
+	margin-top: 4px;
+}
+
+#search-box img {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+/* Site description and logo */
 #site-description {
-	min-width: 900px;
-	max-width: 65%;
-	margin-top: 60px;
-	margin-left: 75px;
-	position: absolute;
+	float: left;
+	width: 70%;
 }
 
 #site-description h1 {
-	font-size: 48px;
-	font-weight: normal;
-	color: #103143;
-}
-
-#site-description p {
-	margin-left: 40px;
-	line-height: 24px;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 16px;
-	color: #535353;
-}
-
-/* Footer
---------------------------------------------- */
-#footer, #footer-fixed {
-	background: #585757;
-	width: 100%;
-	left: 0;
-	font-size: 11px;
-}
-
-#footer-inner {
-	/* Clear fix */
-	padding-right: 5px;
-	overflow: hidden;
-}
-
-#footer-fixed {
-	height: 100%;
-	position: fixed;
-}
-
-#footer p {
-	margin: 0;
-	color: #fbfbfb;
-}
-
-#footer .breadcrumbs {
-	margin-bottom: 15px;
-}
-
-.feed, .topic-link {
-	list-style: none;
-	text-align: right;
-}
-
-.feed {
-	background: url("{T_THEME_PATH}/images/feed_small.gif") right center no-repeat;
+	margin-right: 0;
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
+.headerbar {
+	background: #ebebeb none repeat-x 0 0;
+	color: #FFFFFF;
+	margin-bottom: 4px;
+	padding: 0 5px;
+}
+
 .navbar {
 	background-color: #ebebeb;
 	padding: 0 10px;
@@ -248,6 +196,13 @@ p.right {
 
 .forabg {
 	background: #b1b1b1 none repeat-x 0 0;
+	margin-bottom: 4px;
+	padding: 0 5px;
+	clear: both;
+}
+
+.forumbg {
+	background: #ebebeb none repeat-x 0 0;
 	margin-bottom: 4px;
 	padding: 0 5px;
 	clear: both;
@@ -380,6 +335,7 @@ ul.leftside {
 ul.rightside {
 	float: right;
 	margin-left: 5px;
+	margin-right: -5px;
 	text-align: right;
 }
 
@@ -396,8 +352,8 @@ table.table1 {
 table.table1 thead th {
 	font-weight: normal;
 	text-transform: uppercase;
-	color: #fff;
-	line-height: 1.6em;
+	color: #FFFFFF;
+	line-height: 1.3em;
 	font-size: 1em;
 	padding: 0 0 4px 3px;
 }
@@ -421,7 +377,7 @@ table.table1 td {
 }
 
 table.table1 tbody td {
-	padding: 7px 5px;
+	padding: 5px;
 	border-top: 1px solid #FAFAFA;
 }
 
@@ -436,10 +392,10 @@ table.table1 tbody th {
 /* Specific column styles */
 table.table1 .name		{ text-align: left; }
 table.table1 .posts		{ text-align: center !important; width: 7%; }
-table.table1 .joined	{ text-align: left; width: 19%; }
-table.table1 .active	{ text-align: left; width: 19%; }
+table.table1 .joined	{ text-align: left; width: 15%; }
+table.table1 .active	{ text-align: left; width: 15%; }
 table.table1 .mark		{ text-align: center; width: 7%; }
-table.table1 .info		{ text-align: left; width: 25%; }
+table.table1 .info		{ text-align: left; width: 30%; }
 table.table1 .info div	{ width: 100%; white-space: normal; overflow: hidden; }
 table.table1 .autocol	{ line-height: 2em; white-space: nowrap; }
 table.table1 thead .autocol { padding-left: 1em; }
@@ -459,6 +415,22 @@ table.info tbody th {
 	vertical-align: top;
 	color: #000000;
 	font-weight: normal;
+}
+
+.forumbg table.table1 {
+	margin: 0;
+}
+
+.forumbg-table > .inner {
+	margin: 0 -1px;
+}
+
+.forumbg-table > .inner > span.corners-top {
+	margin: 0 -4px -1px -4px;
+}
+
+.forumbg-table > .inner > span.corners-bottom {
+	margin: -1px -4px 0 -4px;
 }
 
 /* Misc layout styles
@@ -618,10 +590,8 @@ li.pagination {
 
 .error {
 	color: #bcbcbc;
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 11px !important;
-	padding: 5px 7px;
+	font-size: 1em;
 }
 
 .reported {
@@ -636,14 +606,8 @@ div.rules {
 	background-color: #ececec;
 	color: #bcbcbc;
 	padding: 0 10px;
-	margin-bottom: 10px;
-	line-height: 1.3em;
+	margin: 10px 0;
 	font-size: 1.1em;
-}
-
-.rules-header {
-	margin-bottom: 4px;
-	display: block;
 }
 
 div.rules ul, div.rules ol {
@@ -651,14 +615,14 @@ div.rules ul, div.rules ol {
 }
 
 p.rules {
-	background-color: #f3dddd;
-	border: 1px solid #deb7b7;
+	background-color: #ececec;
 	background-image: none;
-	padding: 5px 10px;
+	padding: 5px;
 }
 
 p.rules img {
 	vertical-align: middle;
+	padding-top: 5px;
 }
 
 p.rules a {
