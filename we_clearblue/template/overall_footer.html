@@ -1,16 +1,16 @@
 </div>
 
-<div class="inventia-footer-wrapper">
-	<div class="inventia-footer">
-		<ul class="inventia-footer-menu">
-			<li class="inventia-footer-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
-			<!-- IF not S_IS_BOT --><li class="inventia-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
-			<li class="inventia-footer-menu-item">{S_TIMEZONE}</li>
+<div class="inventea-footer-wrapper">
+	<div class="inventea-footer">
+		<ul class="inventea-footer-menu">
+			<li class="inventea-footer-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
+			<!-- IF not S_IS_BOT --><li class="inventea-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
+			<li class="inventea-footer-menu-item">{S_TIMEZONE}</li>
 		</ul>
 		
-		<footer class="inventia-credits">
+		<footer class="inventea-credits">
 			{CREDIT_LINE}<br />
-			Style we_universal created by <a href="http://inventia.io" title="Premium phpBB styles, HTML5 &amp; CSS3 templates">Inventia</a>.
+			Style we_clearblue created by <a href="http://inventea.com" title="Premium phpBB styles, HTML5 &amp; CSS3 templates">Inventea</a>.
 			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
 			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
 		</footer>
@@ -19,16 +19,25 @@
 	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 </div>
 
-<script src="{T_TEMPLATE_PATH}/assets/zepto/zepto.min.js"></script>
+<script src="{T_TEMPLATE_PATH}/assets/jquery/jquery-2.1.1.min.js"></script>
+<script src="{T_TEMPLATE_PATH}/assets/slick/slick.min.js"></script>
 
 <script>
-$('.inventia-toggle').click(function(e) {
-	$(this).next('.inventia-dropdown-menu').toggle()
+$('.inventea-toggle').click(function(e) {
+	$(this).next('.inventea-dropdown-menu').toggle()
 	e.stopPropagation();
 });
 
 $(document).click(function() {
-	$('.inventia-dropdown-menu').hide();
+	$('.inventea-dropdown-menu').hide();
+});
+
+$(document).ready(function(){
+	$('.inventea-slider').slick({
+		autoplay: true,
+		draggable: false,
+		fade: true
+	});
 });
 </script>
 

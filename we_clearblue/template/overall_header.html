@@ -22,8 +22,15 @@
 		phpBB style name: we_universal
 		Based on style:   prosilver (this is the default phpBB3 style)
 		Original author:  Tom Beddard ( http://www.subBlue.com/ )
-		Modified by:      Inventia ( http://inventia.io/ )
+		Modified by:      Inventea ( http://inventea.com/ )
 	-->
+
+	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+		<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<!-- ENDIF -->
 
 	<script type="text/javascript">
 	// <![CDATA[
@@ -68,123 +75,98 @@
 				eval(onunload_functions[i]);
 			}
 		};
-
 	// ]]>
 	</script>
 
 	<script src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
-
-	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
-	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-
-	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-		<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
-	<!-- ENDIF -->
 </head>
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
-<div id="wrapper" class="inventia-wrapper inventia-statusbar">
-	<span class="inventia-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
-	
-	<nav class="inventia-mobile-menu">
-		<button class="inventia-toggle inventia-mobile-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
+<div class="inventea-wrapper">
+	<div class="inventea-header">
+		<div class="inventea-user-bar">
+			<span class="inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
 
-		<ul class="inventia-dropdown-menu inventia-mobile-dropdown-menu">
-			<li class="inventia-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa fa-home fa-fw"></i> {L_INDEX}</a></li>
-			<li class="inventia-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle fa-fw"></i> {L_FAQ}</a></li>
-			<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search fa-fw"></i> {L_SEARCH}</a></li><!-- ENDIF -->
-			<!-- IF U_TEAM --><li class="inventia-dropdown-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}"><i class="fa fa-users fa-fw"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
-			<!-- IF not S_IS_BOT and S_DISPLAY_MEMBERLIST --><li class="inventia-dropdown-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users fa-fw"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
-
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-				<li class="inventia-dropdown-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user fa-fw"></i> {L_PROFILE}</a></li>
-				<!-- IF S_DISPLAY_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}"><i class="fa fa-envelope fa-fw"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
-				<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}"><i class="fa fa-comments fa-fw"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
-				<!-- IF U_RESTORE_PERMISSIONS --><li class="inventia-dropdown-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}"><i class="fa fa-retweet fa-fw"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-				<!-- IF U_MCP --><li class="inventia-dropdown-menu-item"><a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-tachometer fa-fw"></i> {L_MCP}</a></li><!-- ENDIF -->
-				<!-- IF U_ACP --><li class="inventia-dropdown-menu-item"><a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cog fa-fw"></i> {L_ACP}</a></li><!-- ENDIF -->
-			<!-- ENDIF -->
-			
 			<!-- IF not S_IS_BOT -->
-				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventia-dropdown-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}"><i class="fa fa-check-circle fa-fw"></i> {L_REGISTER}</a></li><!-- ENDIF -->
-				<li class="inventia-dropdown-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-in fa-fw"></i> {L_LOGIN_LOGOUT}</a></li>
+				<nav class="inventea-user-menu">
+					<ul class="inventea-menu">
+						<!-- IF S_USER_LOGGED_IN -->
+							<li class="inventea-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
+							<!-- IF S_DISPLAY_PM --><li class="inventea-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+							<!-- IF S_DISPLAY_SEARCH --><li class="inventea-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li><!-- ENDIF -->
+							<!-- IF U_RESTORE_PERMISSIONS --><li class="inventea-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+						<!-- ENDIF -->
+
+						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventea-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+						<li class="inventea-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+					</ul>
+				</nav>
 			<!-- ENDIF -->
-		</ul>
-	</nav>
+		</div>
 		
-	<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-		<form action="{U_SEARCH}" method="get" id="search" class="inventia-quick-search">
-			<fieldset>
-				<input type="text" name="keywords" id="keywords" class="inventia-quick-search-input" maxlength="128" title="{L_SEARCH_KEYWORDS}" <!-- IF SEARCH_WORDS-->value="{SEARCH_WORDS}"<!-- ELSE -->placeholder="{L_SEARCH_MINI}"<!-- ENDIF --> />
-				<i class="fa fa-search inventia-quick-search-icon"></i>
-				{S_SEARCH_HIDDEN_FIELDS}
-			</fieldset>
-		</form>
-	<!-- ENDIF -->
-</div>
-
-<header class="inventia-header">
-	<div class="inventia-dashboard">
-		<nav class="inventia-forum-menu">
-			<ul class="inventia-menu">
-				<li class="inventia-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
-				<!-- IF S_DISPLAY_SEARCH --><li class="inventia-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
-				<!-- IF U_TEAM --><li class="inventia-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li><!-- ENDIF -->
-				
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li class="inventia-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventia-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
-					<li class="inventia-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
-				<!-- ENDIF -->
-			</ul>
-		</nav>
-		
-		<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-			<nav class="inventia-user-menu">
-				<ul class="inventia-menu">
-					<li class="inventia-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
-					<!-- IF S_DISPLAY_PM --><li class="inventia-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
-					<!-- IF S_DISPLAY_SEARCH --><li class="inventia-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li><!-- ENDIF -->
-					<!-- IF U_RESTORE_PERMISSIONS --><li class="inventia-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-					<!-- IF U_MCP --><li class="inventia-menu-item"><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
-					<!-- IF U_ACP --><li class="inventia-menu-item"><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-				</ul>
-			</nav>
-		<!-- ENDIF -->
-
-		<div class="inventia-sitename">
+		<div class="inventea-sitename">
 			<h1><a href="{U_INDEX}" title="{L_INDEX}">{SITENAME}</a></h1>
 			<span>{SITE_DESCRIPTION}</span>
 		</div>
 	</div>
-</header>
+</div>
 
-<div class="inventia-wrapper inventia-content">
-	<div class="inventia-breadcrumbs-container">
-		<ul class="inventia-breadcrumbs">
-			<li class="inventia-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+<div class="inventea-slider">
+	<div class="inventea-slide" style="background: #e0edf4; border-bottom: 1px solid #bad1de;"></div>
+	<div class="inventea-slide" style="background: #c2d5df; border-bottom: 1px solid #bad1de;"></div>
+</div>
+
+<div class="inventea-wrapper">
+	<div class="inventea-forum-bar">
+		<nav class="inventea-forum-menu">
+			<ul class="inventea-menu">
+				<li class="inventea-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
+				<li class="inventea-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+				<!-- IF S_DISPLAY_SEARCH --><li class="inventea-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
+				<!-- IF U_TEAM --><li class="inventea-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li><!-- ENDIF -->
+				
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li class="inventea-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+
+					<!-- IF S_USER_LOGGED_IN -->
+						<!-- IF U_MCP --><li class="inventea-menu-item"><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
+						<!-- IF U_ACP --><li class="inventea-menu-item"><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+			</ul>
+		</nav>
+
+		<!-- ~buttons -->
+	</div>
+
+
+
+	<div class="inventea-content">
+	<div class="inventea-breadcrumbs-container">
+		<ul class="inventea-breadcrumbs">
+			<li class="inventea-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
 			
 			<!-- BEGIN navlinks -->
-				<li class="inventia-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+				<li class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
 			<!-- END navlinks -->
 		</ul>
 
 		<!-- IF S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
-			<div class="inventia-actions-menu">
-				<button class="inventia-toggle inventia-actions-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-cog"></i></button>
+			<div class="inventea-actions-menu">
+				<button class="inventea-toggle inventea-actions-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-cog"></i></button>
 
-				<ul class="inventia-dropdown-menu inventia-actions-dropdown-menu">
+				<ul class="inventea-dropdown-menu inventea-actions-dropdown-menu">
 					<!-- IF not S_IS_BOT -->
-						<!-- IF S_WATCH_FORUM_LINK --><li class="inventia-dropdown-menu-item"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="fa fa-star fa-fw"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-						<!-- IF U_WATCH_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star fa-fw"></i> {L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BOOKMARK_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark fa-fw"></i> {L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BUMP_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-gavel fa-fw"></i> {L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF S_WATCH_FORUM_LINK --><li class="inventea-dropdown-menu-item"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="fa fa-star fa-fw"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+						<!-- IF U_WATCH_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star fa-fw"></i> {L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BOOKMARK_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark fa-fw"></i> {L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BUMP_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-gavel fa-fw"></i> {L_BUMP_TOPIC}</a></li><!-- ENDIF -->
 					<!-- ENDIF -->
 
-					<!-- IF U_EMAIL_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="fa fa-envelope fa-fw"></i> {L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_PM --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}"><i class="fa fa-envelope fa-fw"> {L_EMAIL_PM}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_PM}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="fa fa-envelope fa-fw"></i> {L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_PM --><li class="inventea-dropdown-menu-item"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}"><i class="fa fa-envelope fa-fw"> {L_EMAIL_PM}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_PM --><li class="inventea-dropdown-menu-item"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_PM}</a></li><!-- ENDIF -->
 				</ul>
 			</div>
 		<!-- ENDIF -->

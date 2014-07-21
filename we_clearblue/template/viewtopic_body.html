@@ -117,16 +117,16 @@
 			<dl class="postprofile<!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ENDIF -->" id="profile{postrow.POST_ID}">
 				<dt>
 					<!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->
-						<div class="inventia-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
+						<div class="inventea-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
 					<!-- ENDIF -->
 
 					<!-- IF postrow.POSTER_AVATAR -->
-						<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}" class="inventia-avatar">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF -->
+						<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}" class="inventea-avatar">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF -->
 					<!-- ENDIF -->
 
-					<div class="inventia-post-author">
+					<div class="inventea-post-author">
 						<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong><!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
-						<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><br /><span class="inventia-rank">{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</span><!-- ENDIF -->
+						<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><br /><span class="inventea-rank">{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</span><!-- ENDIF -->
 					</div>
 				</dt>
 
@@ -258,7 +258,7 @@
 <!-- INCLUDE jumpbox.html -->
 
 <!-- IF S_TOPIC_MOD -->
-	<form method="post" action="{S_MOD_ACTION}" class="inventia-quickmod">
+	<form method="post" action="{S_MOD_ACTION}" class="inventea-quickmod">
 	<fieldset class="quickmod">
 		<label for="quick-mod-select">{L_QUICK_MOD}:</label> {S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="button2" />
 		{S_FORM_TOKEN}
