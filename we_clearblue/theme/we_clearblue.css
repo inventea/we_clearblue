@@ -15,10 +15,11 @@ body {
 }
 
 h1 {
-	margin-top: 0;
-	margin-bottom: 5px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 36px;
+	margin: 0;
+	margin-bottom: 8px;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 48px;
+	font-weight: normal;
 }
 
 h2 {
@@ -66,7 +67,6 @@ a:active {
  * various devices.
  */
 .inventea-wrapper,
-.inventea-dashboard,
 .inventea-footer {
 	width: 95%;
 	max-width: 1170px;
@@ -105,20 +105,11 @@ a:active {
 
 @media (max-width: 768px) {
 	.inventea-wrapper,
-	.inventea-dashboard,
 	.inventea-footer {
 		width: 100%;
 		border: 0;
 	}
-	
-	.inventea-statusbar {
-		height: 46px;
-	}
 
-	.inventea-dashboard {
-		min-height: inherit;
-	}
-	
 	.inventea-footer-wrapper {
 		box-shadow: none;
 		margin: 0;
@@ -132,16 +123,14 @@ a:active {
 }
 
 /**
- * Current time/last visit and quick search
- */
-@media (max-width: 768px) {
-	.inventea-time {
-		display: none;
-	}
-}
-
-/**
  * Slider
+ *
+ * Responsive image slider in header, based on "slick" plugin:
+ * http://kenwheeler.github.io/slick/
+ *
+ * To remove or add new slides visit overall_header.html and adjust content
+ * inside "inventea-slider" block. You can style each slide separately (see end
+ * of this section).
  */
 .inventea-slider {
 	margin-bottom: 0;
@@ -185,17 +174,35 @@ a:active {
 .slick-prev::before { content: "\f053"; }
 .slick-next::before { content: "\f054"; }
 
+/* Slides styling */
+#slide1 {
+	border-bottom: 1px solid #bad1de;
+	background: #e0edf4 url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat center center;
+}
+
+#slide2 {
+	border-bottom: 1px solid #bad1de;
+	background: #e0edf4 url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat right center;
+}
+
 /**
  * Forum name and description
  */
 .inventea-sitename {
-	padding: 70px 50px 92px;
-	color: #fff;
-	font-size: 14px;
+	position: absolute;
+	top: 95px;
+	left: 60px;
+	color: #535353;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 16px;
+}
+
+.inventea-sitename span {
+	margin-left: 18px;
 }
 
 .inventea-sitename a {
-	color: #fff;
+	color: #103143;
 }
 
 @media (max-width: 768px) {
@@ -271,6 +278,13 @@ a:active {
 
 .inventea-menu-item > a {
 	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.inventea-user-bar,
+	.inventea-forum-bar {
+		border-radius: 0;
+	}
 }
 
 /**
@@ -510,8 +524,8 @@ a:active {
 	border-bottom: 3px solid #cacaca;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background: #1f3e59;
-	background: linear-gradient(to bottom, #1f3e59 0%,#153753 100%);
+	background: #1f3e59; /* Fallback for older browsers */
+	background: linear-gradient(to bottom, #1f3e59 0%, #153753 100%);
 }
 
 /* Space between last category and quick login/statistics */
@@ -764,7 +778,7 @@ table.table1 td {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	border-radius: 7px;
-	background-color: #f1f1f1;
+	background-color: #ecf1f3;
 	color: #525252;
 }
 
@@ -774,7 +788,7 @@ table.table1 td {
 }
 
 .bg2 {
-	background-color: #f4f4f4;
+	background-color: #e1ebf5;
 }
 
 .content {
@@ -798,7 +812,7 @@ dl.faq,
 .content h2 {
 	margin-bottom: 10px;
 	padding-bottom: 8px;
-	color: #3f3f3f;
+	color: #115098;
 	text-transform: none;
 	font-size: 16px;
 	font-weight: normal;

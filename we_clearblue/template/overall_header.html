@@ -19,12 +19,12 @@
 	<!-- ENDIF -->
 
 	<!--
-		phpBB style name: we_universal
+		phpBB style name: we_clearblue
 		Based on style:   prosilver (this is the default phpBB3 style)
 		Original author:  Tom Beddard ( http://www.subBlue.com/ )
 		Modified by:      Inventea ( http://inventea.com/ )
 	-->
-
+	
 	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
 
@@ -83,7 +83,7 @@
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
 <div class="inventea-wrapper">
-	<div class="inventea-header">
+	<header class="inventea-header">
 		<div class="inventea-user-bar">
 			<span class="inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
 
@@ -108,12 +108,12 @@
 			<h1><a href="{U_INDEX}" title="{L_INDEX}">{SITENAME}</a></h1>
 			<span>{SITE_DESCRIPTION}</span>
 		</div>
-	</div>
+	</header>
 </div>
 
 <div class="inventea-slider">
-	<div class="inventea-slide" style="background: #e0edf4; border-bottom: 1px solid #bad1de;"></div>
-	<div class="inventea-slide" style="background: #c2d5df; border-bottom: 1px solid #bad1de;"></div>
+	<div id="slide1" class="inventea-slide"></div>
+	<div id="slide2" class="inventea-slide"></div>
 </div>
 
 <div class="inventea-wrapper">
