@@ -25,6 +25,7 @@ h1 {
 h2 {
 	margin-top: 0;
 	margin-bottom: 12px;
+	color: #535353;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -32,6 +33,7 @@ h3 {
 	margin-top: 24px;
 	margin-bottom: 8px;
 	padding-bottom: 5px;
+	border-color: #b7c9d7;
 	color: #105289;
 	font-size: 14px;
 }
@@ -541,7 +543,7 @@ table.table1 tbody {
 
 /* Row (single forum) */
 ul.topiclist li {
-	color: #525252;
+	color: #536482;
 }
 
 table.table1 tbody tr {
@@ -685,7 +687,7 @@ ul.topiclist li.row a.subforum::before {
 	display: inline-block;
 	margin-right: 4px;
 	padding-left: 1px;
-	color: #6b6b6b;
+	color: #536482;
 	font-family: FontAwesome;
 }
 
@@ -719,7 +721,7 @@ dd.lastpost {
 
 /* Last post author and date icons */
 dd.lastpost .fa {
-	color: #6b6b6b;
+	color: #536482;
 }
 
 dd.redirect {
@@ -779,7 +781,7 @@ table.table1 td {
 	padding-bottom: 5px;
 	border-radius: 7px;
 	background-color: #ecf1f3;
-	color: #525252;
+	color: #536482;
 }
 
 .bg1,
@@ -867,20 +869,14 @@ dl.faq dt {
 	background: none;
 }
 
-.post.bg1 .postprofile {
-	background-color: #f2f2f2;
-}
-
+.post.bg1 .postprofile,
 .post.bg1 .postbody {
-	background-color: #f8f8f8;
+	background-color: #eef3f8;
 }
 
-.post.bg2 .postprofile {
-	background-color: #ececec;
-}
-
+.post.bg2 .postprofile,
 .post.bg2 .postbody {
-	background-color: #f1f1f1;
+	background-color: #e1ebf5;
 }
 
 .post.reported .postprofile {
@@ -963,31 +959,6 @@ ul.profile-icons {
 	border-bottom-right-radius: 7px;
 }
 
-.post.bg1 .postbody::before {
-	border-color: transparent #f8f8f8 transparent transparent;
-}
-
-.post.bg2 .postbody::before {
-	border-color: transparent #f2f2f2 transparent transparent;
-}
-
-.post.reported .postbody::before {
-	border-color: transparent #f7ecef transparent transparent;
-}
-
-/* Post message left triangle */
-.post .postbody::before {
-	content: "";
-	position: absolute;
-	display: block;
-	width: 0;
-	height: 0;
-	margin-top: 7px;
-	margin-left: -34px;
-	border-style: solid;
-	border-width: 14px 16px 14px 0;
-}
-
 .postbody h3,
 .postbody h3.first {
 	margin: 0 !important;
@@ -1004,8 +975,8 @@ ul.profile-icons {
 p.author {
 	margin: 1px 0 10px;
 	padding: 0 0 10px;
-	border-bottom: 1px dotted #c2c2c2;
-	color: #525252;
+	border-bottom: 1px dotted #b7c9d7;
+	color: #536482;
 	line-height: 18px;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
@@ -1013,7 +984,7 @@ p.author {
 .postbody .content,
 .post:target .content {
 	overflow: auto;
-	color: #414141;
+	color: #333;
 	line-height: 21px;
 	font-size: 14px;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
@@ -1441,18 +1412,6 @@ a.postlink:hover {
 		border-top-right-radius: 0;
 		border-bottom-left-radius: 7px;
 	}
-	
-	.post.bg1 .postbody::before {
-		border-color: transparent transparent #f8f8f8 transparent;
-	}
-
-	.post.bg2 .postbody::before {
-		border-color: transparent transparent #f2f2f2 transparent;
-	}
-
-	.post.reported .postbody::before {
-		border-color: transparent transparent #f7ecef transparent;
-	}
 
 	/* Post message left triangle */
 	.post .postbody::before {
@@ -1488,7 +1447,7 @@ a.postlink:hover {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background: #eef3f8;
-	color: #6b6b6b;
+	color: #536482;
 }
 
 #tabs a span,
@@ -1507,7 +1466,7 @@ a.postlink:hover {
 #tabs .activetab a,
 #tabs .activetab a span {
 	background: #e1ebf5;
-	color: #414141;
+	color: #333;
 }
 
 #tabs .activetab a {
@@ -1533,13 +1492,13 @@ a.postlink:hover {
 #navigation a {
 	padding: 8px 6px;
 	background: #cad9e5;
-	color: #525252;
+	color: #333;
 }
 
 #navigation a:focus,
 #navigation a:hover,
 #navigation a:active {
-	background: #b5b5b5;
+	background: #bacedd;
 	color: #bc2a4d;
 }
 
@@ -1613,7 +1572,7 @@ dl.mini dt {
 #cp-main h3,
 #cp-main hr,
 #cp-menu hr {
-	border-color: #ccc;
+	border-color: #b7c9d7;
 }
 
 #cp-main .panel {
@@ -1653,12 +1612,12 @@ dl.details {
 }
 
 dl.details dt {
-	color: #414141;
+	color: #333;
 }
 
 dl.details dd {
 	margin-bottom: 4px;
-	color: #525252;
+	color: #536482;
 }
 
 ul.cplist {
@@ -1679,7 +1638,8 @@ ul.cplist {
 	display: block;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background: #4c4c4c;
+	background: #1f3e59; /* Fallback for older browsers */
+	background: linear-gradient(to bottom, #1f3e59 0%, #153753 100%);
 }
 
 .section-ucp ul.topiclist dl.icon,
@@ -1923,7 +1883,7 @@ label {
 label,
 dd label {
 	display: inline-block;
-	color: #525252;
+	color: #333;
 	vertical-align: middle;
 }
 
@@ -2321,7 +2281,7 @@ a.topictitle:active {
 }
 
 a.topictitle:visited {
-	color: #6b6b6b;
+	color: #557fa1;
 }
 
 a.top {
@@ -2364,7 +2324,7 @@ a.right:hover {
 a.left::before,
 a.right::after {
 	display: inline-block;
-	color: #959595;
+	color: #536482;
 	font-family: FontAwesome;
 }
 
