@@ -47,6 +47,7 @@ p {
 hr {
 	margin-top: 8px;
 	margin-bottom: 8px;
+	border-color: #b7c9d7;
 }
 
 a:link,
@@ -433,8 +434,7 @@ a:active {
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin-top: 3px;
-	margin-bottom: 24px;
+	margin: 18px 0;
 	list-style: none;
 	line-height: 18px;
 }
@@ -445,11 +445,11 @@ a:active {
 }
 
 .inventea-breadcrumbs-item::before {
-	content: "/";
+	content: "\203a";
 	display: block;
 	float: right;
-	margin: 0 10px;
-	color: #cacaca;
+	margin: 0 8px;
+	color: #b7c9d7;
 	font-size: 14px;
 }
 
@@ -814,6 +814,7 @@ dl.faq,
 .content h2 {
 	margin-bottom: 10px;
 	padding-bottom: 8px;
+	border-color: #b7c9d7;
 	color: #115098;
 	text-transform: none;
 	font-size: 16px;
@@ -837,7 +838,7 @@ dl.faq:last-child {
 }
 
 dl.faq dt {
-	color: #3f3f3f;
+	color: #333;
 }
 
 @media (max-width: 768px) {
@@ -1924,14 +1925,14 @@ select,
 select:hover,
 .inputbox,
 .inputbox:hover {
-	border-color: #ccc;
+	border-color: #bcc3ca;
 }
 
 select:focus,
 .inputbox:focus {
 	box-shadow: 0 0 5px #c2c2c2;
 	outline: 0;
-	border-color: #b1b1b1;
+	border-color: #8fb2cf;
 	color: #525252;
 }
 
@@ -2288,7 +2289,7 @@ a.top {
 	width: auto;
 	height: auto;
 	background: none;
-	color: #b5b5b5;
+	color: #b7c9d7;
 	text-indent: initial;
 	letter-spacing: normal;
 	font-size: 14px;
@@ -2297,7 +2298,7 @@ a.top {
 a.top:focus,
 a.top:hover,
 a.top:active {
-	color: #959595;
+	color: #8fb2cf;
 }
 
 a.top2 {
@@ -2339,5 +2340,5 @@ a.right::after {
 }
 
 hr.dashed {
-	border-top: 1px dotted #c2c2c2;
+	border-top: 1px dotted #b7c9d7;
 }
