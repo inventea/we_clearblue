@@ -87,11 +87,6 @@ a:active {
 	width: 100%;
 }
 
-.inventea-content {
-	position: relative;
-	border-top: 0;
-}
-
 .inventea-footer-wrapper {
 	display: block;
 	width: 100%;
@@ -100,7 +95,6 @@ a:active {
 .inventea-footer {
 	overflow: hidden;
 	margin: 42px auto;
-	padding: 0 22px;
 	color: #959595;
 	line-height: 18px;
 	font-size: 12px;
@@ -109,19 +103,8 @@ a:active {
 @media (max-width: 768px) {
 	.inventea-wrapper,
 	.inventea-footer {
-		width: 100%;
-		border: 0;
-	}
-
-	.inventea-footer-wrapper {
-		box-shadow: none;
-		margin: 0;
-		border: 0;
-	}
-
-	.inventea-footer {
-		margin: 0;
-		padding: 0;
+		width: auto;
+		margin: 0 8px;
 	}
 }
 
@@ -188,6 +171,12 @@ a:active {
 	background: #e0edf4 url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat right center;
 }
 
+@media (max-width: 768px) {
+	.inventea-slide {
+		height: 200px;
+	}
+}
+
 /**
  * Forum name and description
  */
@@ -208,12 +197,6 @@ a:active {
 	color: #103143;
 }
 
-@media (max-width: 768px) {
-	.inventea-sitename {
-		padding: 40px 25px;
-	}
-}
-
 /**
  * Primary navigation
  *
@@ -230,15 +213,17 @@ a:active {
 }
 
 .inventea-user-bar {
-	padding-top: 11px;
-	padding-bottom: 13px;
+	height: 38px;
 	border-bottom-right-radius: 7px;
 	border-bottom-left-radius: 7px;
+	line-height: 36px;
 }
 
 .inventea-forum-bar {
+	height: 45px;
 	margin-top: -23px;
 	border-radius: 7px;
+	line-height: 45px;
 }
 
 .inventea-user-menu {
@@ -264,7 +249,7 @@ a:active {
 }
 
 .inventea-forum-menu .inventea-menu-item {
-	padding: 15px 14px 16px;
+	padding: 0 14px;
 	border-right: 1px solid #102435;
 	border-left: 1px solid #1c3e5c;
 }
@@ -284,9 +269,10 @@ a:active {
 }
 
 @media (max-width: 768px) {
-	.inventea-user-bar,
-	.inventea-forum-bar {
-		border-radius: 0;
+	.inventea-user-bar {
+		height: 42px;
+		padding: 0 15px;
+		line-height: 40px;
 	}
 }
 
@@ -298,13 +284,13 @@ a:active {
  * or less).
  */
 .inventea-toggle {
-	padding: 4px 6px 2px;
+	box-shadow: inset 0 0 10px 4px #102538;
+	padding: 5px 7px;
 	outline: 0;
 	border: 0;
-	border-bottom: 3px solid #ccc;
-	border-radius: 5px;
-	background: #e9e9e9;
-	color: #414141;
+	border-radius: 6px;
+	background: none;
+	color: #fff;
 }
 
 /* Remove unnecessary padding in Firefox */
@@ -315,21 +301,23 @@ a:active {
 
 .inventea-toggle:hover,
 .inventea-toggle:active {
+	box-shadow: inset 0 0 10px 4px #0a1926;
 	outline: 0;
 	cursor: pointer;
 }
 
-.inventea-dropdown-menu {
+.inventea-dropdown {
 	position: absolute;
 	z-index: 1;
 	display: none;
 	box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+	background: #0a1926;
 	list-style: none;
-	background: #292c2f;
+	line-height: 1;
 }
 
-/* Triangle above dropdown menu */
-.inventea-dropdown-menu::before {
+/* Triangle above dropdown */
+.inventea-dropdown::before {
 	content: "";
 	position: absolute;
 	right: 10px;
@@ -339,7 +327,7 @@ a:active {
 	margin-top: -12px;
 	border-style: solid;
 	border-width: 0 14px 12px 14px;
-	border-color: transparent transparent #292c2f transparent;
+	border-color: transparent transparent #0a1926 transparent;
 }
 
 .inventea-dropdown-menu-item {
@@ -354,13 +342,13 @@ a:active {
 .inventea-dropdown-menu-item a {
 	display: block;
 	padding: 12px 15px 12px 14px;
-	border-bottom: 1px solid #46474a;
-	color: #eee;
+	border-bottom: 1px solid #212b34;
+	color: #fff;
 }
 
 .inventea-dropdown-menu-item a:focus,
 .inventea-dropdown-menu-item a:hover {
-	background: #343639;
+	background: #030d16;
 	text-decoration: none;
 }
 
@@ -389,7 +377,7 @@ a:active {
 }
 
 @media (max-width: 768px) {
-	.inventea-forum-menu,
+	.inventea-forum-bar,
 	.inventea-user-menu {
 		display: none;
 	}
@@ -400,7 +388,7 @@ a:active {
 	
 	.inventea-mobile-menu-toggle {
 		position: absolute;
-		top: 8px;
+		top: 5px;
 		right: 15px;
 		font-size: 21px;
 	}
@@ -413,8 +401,8 @@ a:active {
 
 	.inventea-mobile-dropdown-menu {
 		z-index: 3;
-		top: 55px;
-		right: 6px;
+		top: 56px;
+		right: 7px;
 	}
 	
 	/* Forum and topic actions dropdown menu */
@@ -434,7 +422,8 @@ a:active {
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 18px 0;
+	margin-top: 22px;
+	margin-bottom: 19px;
 	list-style: none;
 	line-height: 18px;
 }
@@ -794,7 +783,7 @@ table.table1 td {
 }
 
 .content {
-	color: #525252;
+	color: #333;
 }
 
 /* Base font in panels */
@@ -1984,10 +1973,11 @@ input.button2,
 input.button3 {
 	height: 28px;
 	padding: 0 6px;
-	border-color: #c5c5c5;
-	border-bottom-width: 2px;
-	background: #dfdfdf;
-	color: #525252;
+	box-shadow: inset 0 1px 0 0 #fff;
+	border-color: #999;
+	background: #d2d2d2;
+	background: linear-gradient(to bottom, #d2d2d2 0%, #f9f9f9 100%);
+	color: #222;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
 
@@ -2012,9 +2002,7 @@ input.button3:hover,
 input.button3:active {
 	outline: 0;
 	border-color: #bc2a4d;
-	border-bottom: 2px solid #91203c;
-	background: #bc2a4d;
-	color: #fff;
+	color: #bc2a4d;
 }
 
 /* Remove unnecessary padding from buttons in Firefox */

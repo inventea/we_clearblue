@@ -25,12 +25,12 @@
 
 <script>
 $('.inventea-toggle').click(function(e) {
-	$(this).next('.inventea-dropdown-menu').toggle()
+	$(this).next('.inventea-dropdown').toggle()
 	e.stopPropagation();
 });
 
 $(document).click(function() {
-	$('.inventea-dropdown-menu').hide();
+	$('.inventea-dropdown').hide();
 });
 
 $(document).ready(function(){
