@@ -62,6 +62,12 @@ a:active {
 	color: #bc2a4d;
 }
 
+@media (max-width: 768px) {
+	h1 {
+		font-size: 36px;
+	}
+}
+
 /**
  * Structure
  *
@@ -70,14 +76,16 @@ a:active {
  * various devices.
  */
 .inventea-wrapper,
+.inventea-slide-inner,
 .inventea-footer {
-	width: 95%;
 	max-width: 1170px;
 	margin: auto;
 }
 
-.inventea-wrapper {
+.inventea-wrapper,
+.inventea-footer {
 	position: relative;
+	width: 95%;
 }
 
 .inventea-header {
@@ -111,24 +119,25 @@ a:active {
 /**
  * Slider
  *
- * Responsive image slider in header, based on "slick" plugin:
+ * Responsive image slider from header, based on "slick" plugin:
  * http://kenwheeler.github.io/slick/
  *
  * To remove or add new slides visit overall_header.html and adjust content
  * inside "inventea-slider" block. You can style each slide separately (see end
- * of this section).
+ * of this section). For more informations check:
+ * http://inventea.com/en/projects/we_clearblue/faq
  */
 .inventea-slider {
 	margin-bottom: 0;
 }
 
-.inventea-slide {
-	height: 270px;
+.inventea-slide,
+.inventea-slide-inner {
+	min-height: 270px;
 }
 
 .slick-prev,
 .slick-next {
-	display: none !important;
 	margin-top: -18px;
 	border-radius: 5px;
 	background: #1f3e59;
@@ -146,13 +155,16 @@ a:active {
 	padding: 11px 11px 8px 13px;
 }
 
-.inventea-slider:hover .slick-prev,
-.inventea-slider:hover .slick-next {
-	display: block !important;
+/* Remove unnecessary padding in Firefox */
+.slick-prev::-moz-focus-inner,
+.slick-next::-moz-focus-inner {
+	padding: 0;
+	border: 0;
 }
 
 .slick-prev::before,
 .slick-next::before {
+	display: block;
 	font-family: FontAwesome;
 	font-size: 16px;
 }
@@ -161,19 +173,30 @@ a:active {
 .slick-next::before { content: "\f054"; }
 
 /* Slides styling */
-#slide1 {
+.inventea-slide-default {
 	border-bottom: 1px solid #bad1de;
-	background: #e0edf4 url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat center center;
+	background: #e0edf4;
 }
 
-#slide2 {
-	border-bottom: 1px solid #bad1de;
-	background: #e0edf4 url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat right center;
+.inventea-slide-default > .inventea-slide-inner {
+	background: url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat right center;
+	background-size: cover;
 }
+
+/*.inventea-slide-example {
+	background: url("{T_THEME_PATH}/images/filename.extension");
+	background-size: cover;
+}*/
 
 @media (max-width: 768px) {
-	.inventea-slide {
-		height: 200px;
+	.slick-prev,
+	.slick-next {
+		display: none !important;
+	}
+
+	.inventea-slide,
+	.inventea-slide-inner {
+		min-height: 172px;
 	}
 }
 
@@ -181,9 +204,7 @@ a:active {
  * Forum name and description
  */
 .inventea-sitename {
-	position: absolute;
-	top: 95px;
-	left: 60px;
+	padding: 96px 60px 92px;
 	color: #535353;
 	font-family: Georgia, Cambria, "Times New Roman", serif;
 	font-size: 16px;
@@ -195,6 +216,16 @@ a:active {
 
 .inventea-sitename a {
 	color: #103143;
+}
+
+@media (max-width: 768px) {
+	.inventea-sitename {
+		padding: 70px 25px 35px;
+	}
+
+	.inventea-sitename span {
+		margin-left: 0;
+	}
 }
 
 /**
@@ -342,7 +373,7 @@ a:active {
 .inventea-dropdown-menu-item a {
 	display: block;
 	padding: 12px 15px 12px 14px;
-	border-bottom: 1px solid #212b34;
+	border-bottom: 1px solid #222d36;
 	color: #fff;
 }
 
@@ -355,20 +386,6 @@ a:active {
 .inventea-dropdown-menu-item .fa {
 	margin-right: 5px;
 	font-size: 14px;
-}
-
-/* Forum and topic actions dropdown menu */
-.inventea-actions-menu {
-	float: right;
-}
-
-.inventea-actions-menu-toggle {
-	font-size: 14px;
-}
-
-.inventea-actions-dropdown-menu  {
-	top: 57px;
-	right: 8px;
 }
 
 /* Don't display mobile menu on large screens */
@@ -403,11 +420,6 @@ a:active {
 		z-index: 3;
 		top: 56px;
 		right: 7px;
-	}
-	
-	/* Forum and topic actions dropdown menu */
-	.inventea-actions-dropdown-menu {
-		right: 3px;
 	}
 }
 

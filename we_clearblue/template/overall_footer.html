@@ -24,6 +24,22 @@
 <script src="{T_TEMPLATE_PATH}/assets/slick/slick.min.js"></script>
 
 <script>
+$(function() {
+	$('.inventea-slider').slick({
+		draggable: false,
+		fade: true,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					draggable: true,
+					fade: true
+				}
+			}
+		]
+	});
+});
+
 $('.inventea-toggle').click(function(e) {
 	$(this).next('.inventea-dropdown').toggle()
 	e.stopPropagation();
@@ -31,13 +47,6 @@ $('.inventea-toggle').click(function(e) {
 
 $(document).click(function() {
 	$('.inventea-dropdown').hide();
-});
-
-$(document).ready(function(){
-	$('.inventea-slider').slick({
-		draggable: false,
-		fade: true
-	});
 });
 </script>
 
