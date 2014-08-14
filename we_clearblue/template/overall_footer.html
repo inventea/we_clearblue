@@ -3,12 +3,74 @@
 
 <div class="inventea-footer-wrapper">
 	<div class="inventea-footer">
+		<div class="inventea-widgets-wrapper">
+			<!-- IF S_ENABLE_FEEDS -->
+				<div class="inventea-widget inventea-list-widget">
+					<h4 class="inventea-widget-title">{L_FEED}</h4>
+
+					<ul class="inventea-widget-links">
+						<!-- IF S_ENABLE_FEEDS_OVERALL --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}" title="{L_FEED} - {SITENAME}">{SITENAME}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_NEWS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=news" title="{L_FEED} - {L_FEED_NEWS}">{L_FEED_NEWS}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_FORUMS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=forums" title="{L_FEED} - {L_ALL_FORUMS}">{L_ALL_FORUMS}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_TOPICS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=topics" title="{L_FEED} - {L_FEED_TOPICS_NEW}">{L_FEED_TOPICS_NEW}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=topics_active" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}">{L_FEED_TOPICS_ACTIVE}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?f={S_FORUM_ID}" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}">{L_FORUM} - {FORUM_NAME}</a></li><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}">{L_TOPIC} - {TOPIC_TITLE}</a></li><!-- ENDIF -->
+					</ul>
+				</div>
+			<!-- ENDIF -->
+
+			<div class="inventea-widget inventea-list-widget">
+				<h4 class="inventea-widget-title">{L_GOTO_PAGE}</h4>
+
+				<ul class="inventea-widget-links">
+					<!-- IF not S_IS_BOT -->
+						<!-- IF S_WATCH_FORUM_LINK --><li class="inventea-widget-links-item"><i class="fa fa-star fa-fw"></i> <a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+						<!-- IF U_WATCH_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-star fa-fw"></i> <a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BOOKMARK_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-bookmark fa-fw"></i> <a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BUMP_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-gavel fa-fw"></i>  <a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+
+					<!-- IF U_EMAIL_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-envelope fa-fw"></i> <a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_PM --><li class="inventea-widget-links-item"><i class="fa fa-envelope fa-fw"></i> <a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-print fa-fw"></i> <a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_PM --><li class="inventea-widget-links-item"><i class="fa fa-print fa-fw"></i> <a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"> {L_PRINT_PM}</a></li><!-- ENDIF -->
+
+					<!-- IF not S_IS_BOT -->
+						<!-- IF S_DISPLAY_SEARCH --><li class="inventea-widget-links-item"><i class="fa fa-search fa-fw"></i> <a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></li><!-- ENDIF -->
+						<!-- IF S_USER_LOGGED_IN --><li class="inventea-widget-links-item"><i class="fa fa-user fa-fw"></i> <a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+
+					<!-- IF U_ACP --><li class="inventea-widget-links-item"><i class="fa fa-cog fa-fw"></i> <a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+				</ul>
+			</div>
+
+			<div class="inventea-widget inventea-text-widget">
+				<h4 class="inventea-widget-title">About us</h4>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor lectus quis mattis aliquet.
+				Cras in nibh et eros porttitor facilisis. Nunc egestas eget leo vel dapibus. Cum sociis natoque
+				penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.
+				Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+				Nunc rutrum dui ipsum, ac tincidunt felis pharetra sed. Aenean viverra sagittis interdum.</p>
+			</div>
+		</div>
+
+		<div class="inventea-breadcrumbs-container">
+			<ul class="inventea-breadcrumbs">
+				<li class="inventea-breadcrumbs-item">{L_JUMP_TO}: <a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+
+				<!-- BEGIN navlinks -->
+					<li class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+				<!-- END navlinks -->
+			</ul>
+		</div>
+
 		<ul class="inventea-footer-menu">
-			<li class="inventea-footer-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
 			<!-- IF not S_IS_BOT --><li class="inventea-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
 			<li class="inventea-footer-menu-item">{S_TIMEZONE}</li>
 		</ul>
-		
+
 		<footer class="inventea-credits">
 			{CREDIT_LINE}<br />
 			Style we_clearblue created by <a href="http://inventea.com" title="Premium phpBB styles, HTML5 &amp; CSS3 templates">Inventea</a>.
