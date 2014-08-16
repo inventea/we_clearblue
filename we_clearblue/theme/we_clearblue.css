@@ -523,6 +523,32 @@ a:active {
 	max-width: 40%;
 }
 
+/* Social icons */
+.inventea-social-icons {
+	list-style: none;
+	font-size: 18px;
+}
+
+.inventea-social-icons-item {
+	float: left;
+	margin-right: 8px;
+}
+
+.inventea-social-icons-item a {
+	display: block;
+	width: 28px;
+	border-radius: 50%;
+	background: #bab6b6;
+	color: #585757;
+	text-align: center;
+	line-height: 28px;
+}
+
+.inventea-social-icons-item a:focus,
+.inventea-social-icons-item a:hover {
+	background: #e7e4e4;
+}
+
 /* Footer breadcrumbs */
 .inventea-footer .inventea-breadcrumbs-item::before {
 	color: #e7e4e4;
@@ -564,15 +590,11 @@ a:active {
 	}
 
 	.inventea-list-widget {
-		margin-bottom: 26px;
+		margin-bottom: 32px;
 	}
 
 	.inventea-text-widget {
 		max-width: 100%;
-	}
-
-	.inventea-breadcrumbs {
-		margin-top: 3px;
 	}
 
 	.inventea-footer-menu,
