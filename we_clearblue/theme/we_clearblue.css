@@ -408,11 +408,11 @@ a:active {
 	.inventea-user-menu {
 		display: none;
 	}
-	
+
 	.inventea-mobile-menu {
 		display: block;
 	}
-	
+
 	.inventea-mobile-menu-toggle {
 		position: absolute;
 		top: 5px;
@@ -804,7 +804,7 @@ ul.topiclist.topics li.row dt {
 /* Topic icon */
 .forumbg ul.topiclist li.row dt img {
 	margin-top: 20px;
-	margin-right: -20px; 
+	margin-right: -20px;
 }
 
 dd.topics,
@@ -1128,7 +1128,7 @@ p.author {
 
 /* Poll preview background */
 .section-posting #preview .content {
-	background: #f1f1f1;
+	background: #e1ebf5;
 }
 
 #postform .content .author {
@@ -1397,21 +1397,17 @@ a.postlink:hover {
 	box-sizing: border-box;
 	width: 28px;
 	padding-top: 5px;
-	padding-bottom: 3px;
-	border-bottom: 3px solid #c5c5c5;
+	padding-bottom: 4px;
+	box-shadow: inset 0 0 0 1px #fff;
+	border: 1px solid #c7c3bf;
 	border-radius: 5px;
-	background: #dfdfdf;
+	background: #f0f0f0;
+	background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
 	color: #6b6b6b;
 	text-transform: uppercase;
 	text-align: center;
 	line-height: 17px;
 	font-size: 12px;
-}
-
-/* More dark profile icons */
-.postprofile ul.profile-icons li a {
-	border-color: #c5c5c5;
-	background: #dfdfdf;
 }
 
 .postprofile ul.profile-icons li a:focus,
@@ -1420,9 +1416,8 @@ a.postlink:hover {
 .postbody ul.profile-icons li a:focus,
 .postbody ul.profile-icons li a:hover,
 .postbody ul.profile-icons li a:active {
-	border-color: #91203c;
-	background: #bc2a4d;
-	color: #fff;
+	background: linear-gradient(to bottom, #e9e9e9 0%, #fff 100%);
+	color: #bc2a4d;
 	text-decoration: none;
 }
 
@@ -1613,13 +1608,13 @@ a.postlink:hover {
 #minitabs li a {
 	display: block;
 	padding: 8px;
-	background: #ccc;
-	color: #525252;
+	background: #cad9e5;
+	color: #333;
 }
 
 #minitabs li a:focus,
 #minitabs li a:hover {
-	background: #b5b5b5;
+	background: #bacedd;
 	color: #bc2a4d;
 }
 
@@ -1904,11 +1899,13 @@ hr + .topic-actions {
 .buttons div a {
 	display: block;
 	width: auto;
-	padding: 8px 10px 6px;
-	border-bottom: 3px solid #ccc;
+	padding: 8px 10px 7px;
+	box-shadow: inset 0 0 0 1px #fff;
+	border: 1px solid #c7c3bf;
 	border-radius: 5px;
-	background: #e9e9e9;
-	color: #6b6b6b;
+	background: #f0f0f0;
+	background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
+	color: #535353;
 	text-transform: uppercase;
 	line-height: 17px;
 	font-size: 12px;
@@ -1917,9 +1914,8 @@ hr + .topic-actions {
 .buttons div a:focus,
 .buttons div a:hover,
 .buttons div a:active {
-	border-color: #91203c;
-	background: #bc2a4d;
-	color: #fff;
+	background: linear-gradient(to bottom, #e9e9e9 0%, #fff 100%);
+	color: #bc2a4d;
 	text-decoration: none;
 }
 
@@ -2197,7 +2193,7 @@ input.search {
 		display: block;
 		margin-bottom: 10px;
 	}
-	
+
 	/* Reduce input left margin */
 	fieldset dd,
 	fieldset.fields1 dd,
@@ -2215,7 +2211,7 @@ input.search {
 	input.medium {
 		width: 50%;
 	}
-	
+
 	input.tiny {
 		width: 125px;
 	}
