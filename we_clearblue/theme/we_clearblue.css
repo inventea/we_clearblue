@@ -666,7 +666,7 @@ table.table1 tbody tr:hover {
 /* Different background for even rows */
 li.row:nth-child(even),
 table.table1 tbody tr:nth-child(even) {
-	background: #f2f2f2;
+	background: #f0f4f7;
 }
 
 .forumbg ul.topiclist li.reported dd:nth-child(even),
@@ -1096,7 +1096,7 @@ p.author {
 	clear: none;
 	margin-top: 10px;
 	padding-top: 10px;
-	border-top: 1px dotted #c2c2c2;
+	border-top: 1px dotted #b7c9d7;
 	color: #525252;
 	line-height: 18px;
 	font-size: 12px;
@@ -1178,7 +1178,7 @@ p.author {
 .postprofile a:link,
 .postprofile a:visited,
 .search .postprofile a {
-	color: #3f3f3f;
+	color: #105289;
 }
 
 .postprofile a:focus,
@@ -1206,7 +1206,7 @@ fieldset.polls {
 fieldset.polls dl {
 	margin: 0;
 	padding: 0;
-	border-color: #dadada;
+	border-color: #d4dde1;
 	color: #525252;
 }
 
@@ -1233,7 +1233,7 @@ fieldset.polls dd div {
 	clear: right;
 	max-width: 832px;
 	padding: 7px;
-	border: 1px solid #ccc;
+	border: 1px solid #d4dde1;
 }
 
 .inline-attachment {
@@ -1253,7 +1253,7 @@ dl.file {
 
 .attachbox dd {
 	padding-top: 6px;
-	border-color: #ccc;
+	border-color: #d4dde1;
 }
 
 dl.file {
@@ -1289,11 +1289,12 @@ dl.codebox {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding: 3px 5px;
-	border-color: #ccc;
+	border-color: #d4dde1;
 }
 
 dl.codebox dt {
 	padding-bottom: 3px;
+	border-color: #d4dde1;
 	font-size: 12px;
 }
 
@@ -1312,7 +1313,7 @@ blockquote {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border-color: #ddd;
-	background: #fbfbfb;
+	background: #f9f9f9;
 	font-size: 14px;
 }
 
@@ -1339,12 +1340,12 @@ blockquote cite {
 }
 
 a.postlink {
-	border-bottom: 1px dotted #6b6b6b;
-	color: #6b6b6b;
+	border-bottom: 1px dotted #105289;
+	color: #105289;
 }
 
 a.postlink:visited {
-	color: #959595;
+	color: #557fa1;
 }
 
 a.postlink:active,
@@ -1752,7 +1753,7 @@ ul.cplist {
 
 .section-ucp ul.topiclist .bg1,
 .section-mcp ul.topiclist .bg1 {
-	background-color: #f2f2f2;
+	background-color: #f0f4f7;
 }
 
 .section-ucp ul.topiclist .bg2,
@@ -2290,26 +2291,26 @@ p.rules img {
 
 /* Current page */
 .pagination span strong {
-	border-color: #cacaca;
-	background: #f2f2f2;
-	color: #959595;
+	border-color: #4692bf;
+	background: #4692bf;
+	color: #fff;
 }
 
 .pagination span a,
 .pagination span a:link,
 .pagination span a:visited {
-	border-color: #b5b5b5;
-	background: #e7e7e7;
-	color: #525252;
+	border-color: #b4bac0;
+	background: #ecedee;
+	color: #5c758c;
 }
 
 /* Pagination on topics list */
 .row .pagination span a {
 	margin-right: 0;
 	margin-left: 4px;
-	border-color: #b5b5b5;
-	background: #f9f9f9;
-	color: #6b6b6b;
+	border-color: #b4bac0;
+	background: #ecedee;
+	color: #5c758c;
 }
 
 .pagination span a:focus,
