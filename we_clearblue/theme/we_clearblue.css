@@ -849,7 +849,7 @@ table.table1 {
 }
 
 table.table1 td {
-	color: #525252;
+	color: #536482;
 }
 
 /* Recent searches tables */
@@ -1503,16 +1503,14 @@ a.postlink:hover {
 
 	/* Post message */
 	.post .postbody {
+		padding-top: 0;
 		border-top-right-radius: 0;
 		border-bottom-left-radius: 7px;
 	}
 
-	/* Post message left triangle */
-	.post .postbody::before {
-		right: 25px;
-		margin-top: -34px;
-		margin-left: 0;
-		border-width: 0 14px 16px 14px;
+	.postbody h3 {
+		padding-top: 10px !important;
+		border-top: 1px dotted #b7c9d7;	
 	}
 }
 
