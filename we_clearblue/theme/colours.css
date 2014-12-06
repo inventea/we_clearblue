@@ -2,8 +2,10 @@
 --------------------------------------------------------------
 Colours and backgrounds for common.css
 -------------------------------------------------------------- */
+
 html, body {
 	color: #536482;
+	background-color: #FFFFFF;
 }
 
 h1 {
@@ -11,7 +13,7 @@ h1 {
 }
 
 h2 {
-	color: #535353;
+	color: #28313F;
 }
 
 h3 {
@@ -28,17 +30,46 @@ hr.dashed {
 	border-top-color: #CCCCCC;
 }
 
-/* Site name and description
+/* Search box
 --------------------------------------------- */
-#site-description h1 a {
-	color: #103143;
+
+#search-box {
+	color: #FFFFFF;
+}
+
+#search-box #keywords {
+	background-color: #FFF;
+}
+
+#search-box input {
+	border-color: #0075B0;
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
+.headerbar {
+	background-color: #12A3EB;
+	background-image: url("{T_THEME_PATH}/images/bg_header.gif");
+	color: #FFFFFF;
+}
+
+.navbar {
+	background-color: #cadceb;
+}
+
+.forabg {
+	background-color: #0076b1;
+	background-image: url("{T_THEME_PATH}/images/bg_list.gif");
+}
+
+.forumbg {
+	background-color: #12A3EB;
+	background-image: url("{T_THEME_PATH}/images/bg_header.gif");
+}
+
 .panel {
 	background-color: #ECF1F3;
-	color: #666;
+	color: #28313F;
 }
 
 .post:target .content {
@@ -49,15 +80,9 @@ hr.dashed {
 	color: #000000;
 }
 
-.bg1	{ background-color: #eef3f8; }
-.bg2	{ background-color: #e1ebf5; }
-.bg3	{ background-color: #d0e0f0; }
-
-.forums .bg1	{ background-color: #fafcfe; }
-.forums .bg2	{ background-color: #f0f4f7; }
-
-.forums .bg1 .bg2	{ background-color: #ecf2f7; }
-.forums .bg2 .bg2	{ background-color: #e4ebf2; }
+.bg1	{ background-color: #ECF3F7; }
+.bg2	{ background-color: #e1ebf2;  }
+.bg3	{ background-color: #cadceb; }
 
 .ucprowbg {
 	background-color: #DCDEE2;
@@ -67,16 +92,25 @@ hr.dashed {
 	background-color: #E7E8EA;
 }
 
-span.corners-top, span.corners-bottom {
+span.corners-top {
 	background-image: url("{T_THEME_PATH}/images/corners_left.png");
 }
 
-span.corners-top span, span.corners-bottom span {
+span.corners-top span {
+	background-image: url("{T_THEME_PATH}/images/corners_right.png");
+}
+
+span.corners-bottom {
+	background-image: url("{T_THEME_PATH}/images/corners_left.png");
+}
+
+span.corners-bottom span {
 	background-image: url("{T_THEME_PATH}/images/corners_right.png");
 }
 
 /* Horizontal lists
 ----------------------------------------*/
+
 ul.navlinks {
 	border-bottom-color: #FFFFFF;
 }
@@ -84,7 +118,7 @@ ul.navlinks {
 /* Table styles
 ----------------------------------------*/
 table.table1 thead th {
-	color: #fff;
+	color: #FFFFFF;
 }
 
 table.table1 tbody tr {
@@ -92,25 +126,16 @@ table.table1 tbody tr {
 }
 
 table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-	background-color: #f8f7de;
+	background-color: #CFE1F6;
 	color: #000;
 }
 
 table.table1 td {
-	color: #666;
+	color: #536482;
 }
 
 table.table1 tbody td {
-	border-bottom: 1px solid #c1c1c1;
-	border-right: 1px solid #c1c1c1;
-}
-
-table.table1 tbody td:last-child {
-	border-right: none;
-}
-
-table.table1 tbody tr:last-child td {
-	border-bottom: none;
+	border-top-color: #FAFAFA;
 }
 
 table.table1 tbody th {
@@ -139,6 +164,7 @@ dl.details dd {
 
 /* Pagination
 ---------------------------------------- */
+
 .pagination span strong {
 	color: #FFFFFF;
 	background-color: #4692BF;
@@ -178,32 +204,29 @@ dl.details dd {
 
 /* Miscellaneous styles
 ---------------------------------------- */
+
 .copyright {
-	color: #888;
+	color: #555555;
 }
 
 .error {
-	background-color: #f4e1e6;
-	background-image: none;
-	border: 1px solid #deb7b7;
-	color: #b53d5a;
+	color: #BC2A4D;
 }
 
 .reported {
-	background-color: #f7ecef !important;
-}
-
-.reported .bg2 {
-	background-color: #f4e1e6 !important;
+	background-color: #F7ECEF;
 }
 
 li.reported:hover {
-	background-color: #f2dfe1 !important;
+	background-color: #ECD5D8 !important;
+}
+.sticky, .announce {
+	/* you can add a background for stickies and announcements*/
 }
 
 div.rules {
-	background-color: #f4e1e6;
-	color: #b53d5a;
+	background-color: #ECD5D8;
+	color: #BC2A4D;
 }
 
 p.rules {
@@ -215,35 +238,76 @@ p.rules {
 --------------------------------------------------------------
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
-a:link, a:visited	{ color: #105289; }
-a:hover, a:focus	{ color: #D31141; }
-a:active			{ color: #368AD2; }
+
+a:link	{ color: #105289; }
+a:visited	{ color: #105289; }
+a:hover	{ color: #D31141; }
+a:active	{ color: #368AD2; }
+
+/* Links on gradient backgrounds */
+#search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
+	color: #FFFFFF;
+}
+
+#search-box a:visited, .navbg a:visited, .forumbg .header a:visited, .forabg .header a:visited, th a:visited {
+	color: #FFFFFF;
+}
+
+#search-box a:hover, .navbg a:hover, .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+	color: #A8D8FF;
+}
+
+#search-box a:active, .navbg a:active, .forumbg .header a:active, .forabg .header a:active, th a:active {
+	color: #C8E6FF;
+}
 
 /* Links for forum/topic lists */
-a.forumtitle, a.topictitle {
+a.forumtitle {
 	color: #105289;
 }
 
-a.topictitle:visited {
-	color: #557fa1;
+/* a.forumtitle:visited { color: #105289; } */
+
+a.forumtitle:hover {
+	color: #BC2A4D;
 }
 
-a.forumtitle:hover, a.topictitle:hover {
+a.forumtitle:active {
+	color: #105289;
+}
+
+a.topictitle {
+	color: #105289;
+}
+
+/* a.topictitle:visited { color: #368AD2; } */
+
+a.topictitle:hover {
 	color: #BC2A4D;
+}
+
+a.topictitle:active {
+	color: #105289;
 }
 
 /* Post body links */
 .postlink {
-	color: #666;
-	text-decoration: none;
+	color: #368AD2;
+	border-bottom-color: #368AD2;
 }
 
 .postlink:visited {
-	color: #888;
+	color: #5D8FBD;
+	border-bottom-color: #5D8FBD;
+}
+
+.postlink:active {
+	color: #368AD2;
 }
 
 .postlink:hover {
-	color: #c20031;
+	background-color: #D0E4F6;
+	color: #0D4473;
 }
 
 .signature a, .signature a:visited, .signature a:hover, .signature a:active {
@@ -265,7 +329,7 @@ a.forumtitle:hover, a.topictitle:hover {
 
 /* Profile searchresults */	
 .search .postprofile a {
-	color: #444;
+	color: #105289;
 }
 
 .search .postprofile a:hover {
@@ -291,16 +355,27 @@ a.up:hover {
 	background-color: transparent;
 }
 
-a.left:hover, a.right:hover {
-	color: #c20031;
+a.left:hover {
+	color: #368AD2;
 }
+
+a.right:hover {
+	color: #368AD2;
+}
+
 
 /*  	
 --------------------------------------------------------------
 Colours and backgrounds for content.css
 -------------------------------------------------------------- */
+
+ul.forums {
+	background-color: #eef5f9;
+	background-image: url("{T_THEME_PATH}/images/gradient.gif");
+}
+
 ul.topiclist li {
-	color: #666;
+	color: #4C5D77;
 }
 
 ul.topiclist dd {
@@ -312,12 +387,38 @@ ul.topiclist dd {
 	border-left-color: transparent;
 }
 
-.row a.subforum.read {
+ul.topiclist li.row dt a.subforum.read {
 	background-image: url("{IMG_SUBFORUM_READ_SRC}");
 }
 
-.row a.subforum.unread {
+ul.topiclist li.row dt a.subforum.unread {
 	background-image: url("{IMG_SUBFORUM_UNREAD_SRC}");
+}
+
+li.row {
+	border-top-color:  #FFFFFF;
+	border-bottom-color: #00608F;
+}
+
+li.row strong {
+	color: #000000;
+}
+
+li.row:hover {
+	background-color: #F6F4D0;
+}
+
+li.row:hover dd {
+	border-left-color: #CCCCCC;
+}
+
+.rtl li.row:hover dd {
+	border-right-color: #CCCCCC;
+	border-left-color: transparent;
+}
+
+li.header dt, li.header dd {
+	color: #FFFFFF;
 }
 
 /* Forum list column styles */
@@ -328,18 +429,18 @@ ul.topiclist dd.searchextra {
 /* Post body styles
 ----------------------------------------*/
 .postbody {
-	color: #333;
+	color: #333333;
 }
 
 /* Content container styles
 ----------------------------------------*/
 .content {
-	color: #333;
+	color: #333333;
 }
 
 .content h2, .panel h2 {
-	color: #3f3f3f;
-	border-bottom-color: #ccc;
+	color: #115098;
+	border-bottom-color:  #CCCCCC;
 }
 
 dl.faq dt {
@@ -353,22 +454,21 @@ dl.faq dt {
 
 /* Post signature */
 .signature {
-	border-top-color: #ccc;
+	border-top-color: #CCCCCC;
 }
 
 /* Post noticies */
 .notice {
-	background: #f3dddd;
-	border-color: #deb7b7;
+	border-top-color:  #CCCCCC;
 }
 
 /* BB Code styles
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	background-color: #f9f9f9;
+	background-color: #EBEADD;
 	background-image: url("{T_THEME_PATH}/images/quote.gif");
-	border-color: #ddd;
+	border-color:#DBDBCE;
 }
 
 .rtl blockquote {
@@ -377,12 +477,12 @@ blockquote {
 
 blockquote blockquote {
 	/* Nested quotes */
-	background-color:#f1f1f1;
+	background-color:#EFEED9;
 }
 
 blockquote blockquote blockquote {
 	/* Nested quotes */
-	background-color: #e9e9e9;
+	background-color: #EBEADD;
 }
 
 /* Code block */
@@ -453,13 +553,14 @@ dl.thumbnail dt a:hover {
 }
 
 dl.thumbnail dt a:hover img {
-	border-color: #c20031;
+	border-color: #368AD2;
 }
 
 /* Post poll styles
 ----------------------------------------*/
+
 fieldset.polls dl {
-	border-top-color: #dcdcdc;
+	border-top-color: #DCDEE2;
 	color: #666666;
 }
 
@@ -476,13 +577,13 @@ fieldset.polls dd div {
 }
 
 .pollbar1 {
-	background-color: #c20031;
-	border-bottom-color: #942a43;
-	border-right-color: #942a43;
+	background-color: #AA2346;
+	border-bottom-color: #74162C;
+	border-right-color: #74162C;
 }
 
 .rtl .pollbar1 {
-	border-left-color: #942a43;
+	border-left-color: #74162C;
 }
 
 .pollbar2 {
@@ -516,13 +617,13 @@ fieldset.polls dd div {
 }
 
 .pollbar5 {
-	background-color: #d61c54;
-	border-bottom-color: #b8294b;
-	border-right-color: #b8294b;
+	background-color: #F81157;
+	border-bottom-color: #D11A4E;
+	border-right-color: #D11A4E;
 }
 
 .rtl .pollbar5 {
-	border-left-color: #b8294b;
+	border-left-color: #D11A4E;
 }
 
 /* Poster profile block
@@ -554,18 +655,6 @@ fieldset.polls dd div {
 	background-image: url("{IMG_ICON_USER_ONLINE_SRC}");
 }
 
-.post .online {
-	margin-top: -5px;
-}
-
-.pm .online {
-	margin-top: -10px;
-}
-
-.post .online dt {
-	margin-top: 10px;
-}
-
 /*  	
 --------------------------------------------------------------
 Colours and backgrounds for buttons.css
@@ -580,11 +669,15 @@ Colours and backgrounds for buttons.css
 .forwardpm-icon span	{ background-image: url("{IMG_BUTTON_PM_FORWARD_SRC}") ;}
 
 a.print {
-	background-image: url("{T_THEME_PATH}/images/icon_print.png");
+	background-image: url("{T_THEME_PATH}/images/icon_print.gif");
 }
 
 a.sendemail {
-	background-image: url("{T_THEME_PATH}/images/icon_sendemail.png");
+	background-image: url("{T_THEME_PATH}/images/icon_sendemail.gif");
+}
+
+a.fontsize {
+	background-image: url("{T_THEME_PATH}/images/icon_fontsize.gif");
 }
 
 /* Icon images
@@ -628,8 +721,9 @@ Colours and backgrounds for cp.css
 
 /* Main CP box
 ----------------------------------------*/
+
 #cp-main h3, #cp-main hr, #cp-menu hr {
-	border-color: #b7c9d7;
+	border-color: #A4B3BF;
 }
 
 #cp-main .panel li.row {
@@ -658,30 +752,34 @@ ul.cplist {
 /* CP tabbed menu
 ----------------------------------------*/
 #tabs a {
-	background: #eef3f8;
+	background-image: url("{T_THEME_PATH}/images/bg_tabs1.gif");
+}
+
+#tabs a span {
+	background-image: url("{T_THEME_PATH}/images/bg_tabs2.gif");
 	color: #536482;
 }
 
-#tabs .activetab a {
-	background: #e1ebf5;
-	border-bottom: 1px solid #e1ebf5;
-	color: #333;
-}
-
-#tabs a:hover {
-	background: #d0e0f0;
-	text-decoration: none;
+#tabs a:hover span {
 	color: #BC2A4D;
 }
 
-#tabs .activetab a:hover {
-	background: #e1ebf5;
+#tabs .activetab a {
+	border-bottom-color: #CADCEB;
+}
+
+#tabs .activetab a span {
+	color: #333333;
+}
+
+#tabs .activetab a:hover span {
+	color: #000000;
 }
 
 /* Mini tabbed menu used in MCP
 ----------------------------------------*/
 #minitabs li {
-	background-color: #eef3f8;
+	background-color: #E1EBF2;
 }
 
 #minitabs li.activetab {
@@ -698,7 +796,7 @@ ul.cplist {
 /* Link styles for the sub-section links */
 #navigation a {
 	color: #333;
-	background-color: #cad9e5;
+	background-color: #B2C2CF;
 	background-image: url("{T_THEME_PATH}/images/bg_menu.gif");
 }
 
@@ -709,7 +807,7 @@ ul.cplist {
 
 #navigation a:hover {
 	background-image: none;
-	background-color: #bacedd;
+	background-color: #aabac6;
 	color: #BC2A4D;
 }
 
@@ -787,24 +885,24 @@ dl.mini dt {
 }
 
 /* PM marking colours */
-.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #BC2A4D;
 	border-right-color: #BC2A4D;
 }
 
-.pmlist .pm_marked_colour, .pm_marked_colour {
+.pmlist li.pm_marked_colour, .pm_marked_colour {
 	border-color: #FF6600;
 }
 
-.pmlist .pm_replied_colour, .pm_replied_colour {
+.pmlist li.pm_replied_colour, .pm_replied_colour {
 	border-color: #A9B8C2;
 }
 
-.pmlist .pm_friend_colour, .pm_friend_colour {
+.pmlist li.pm_friend_colour, .pm_friend_colour {
 	border-color: #5D8FBD;
 }
 
-.pmlist .pm_foe_colour, .pm_foe_colour {
+.pmlist li.pm_foe_colour, .pm_foe_colour {
 	border-color: #000000;
 }
 
@@ -856,11 +954,12 @@ fieldset.fields2 dl:hover dt label {
 
 /* Quick-login on index page */
 fieldset.quick-login input.inputbox {
-	background-color: #efefef;
+	background-color: #F2F3F3;
 }
 
 /* Posting page styles
 ----------------------------------------*/
+
 #message-box textarea {
 	color: #333333;
 }
@@ -874,16 +973,17 @@ fieldset.quick-login input.inputbox {
 }
 
 .inputbox:hover {
-	border-color: #6c94b6;
+	border-color: #11A3EA;
 }
 
 .inputbox:focus {
-	border-color: #6c94b6;
+	border-color: #11A3EA;
 	color: #0F4987;
 }
 
 /* Form button styles
 ---------------------------------------- */
+
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	color: #000;
 	background-color: #FAFAFA;
@@ -915,7 +1015,7 @@ a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, inpu
 }
 
 input.search {
-	background: url("{T_THEME_PATH}/images/icon_textbox_search.gif") 1px 3px no-repeat;
+	background-image: url("{T_THEME_PATH}/images/icon_textbox_search.gif");
 }
 
 input.disabled {

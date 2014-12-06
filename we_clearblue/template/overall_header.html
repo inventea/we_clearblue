@@ -1,22 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-	<meta http-equiv="content-style-type" content="text/css" />
-	<meta http-equiv="content-language" content="{S_USER_LANG}" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="resource-type" content="document" />
-	<meta name="distribution" content="global" />
-	<meta name="keywords" content="" />
+	<meta charset="{S_CONTENT_ENCODING}" />
 	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	{META}
-	
 	<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
-	
-	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
-	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-	<!-- IF S_CONTENT_DIRECTION eq 'rtl' --><link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
-	
+
 	<!-- IF S_ENABLE_FEEDS -->
 		<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
 		<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
@@ -26,13 +17,20 @@
 		<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
 		<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
 	<!-- ENDIF -->
-	
+
 	<!--
 		phpBB style name: we_clearblue
 		Based on style:   prosilver (this is the default phpBB3 style)
-		Original author:  Tom Beddard (http://www.subBlue.com/)
-		Modified by:      Inventia (http://inventia.io)
+		Original author:  Tom Beddard ( http://www.subBlue.com/ )
+		Modified by:      INVENTEA ( http://inventea.com/ )
 	-->
+	
+	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+		<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<!-- ENDIF -->
 
 	<script type="text/javascript">
 	// <![CDATA[
@@ -44,21 +42,21 @@
 		var style_cookie_settings = '{A_COOKIE_SETTINGS}';
 		var onload_functions = new Array();
 		var onunload_functions = new Array();
-	
+
 		<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
 			var url = '{UA_POPUP_PM}';
 			window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 		<!-- ENDIF -->
-	
+
 		/**
 		* Find a member
 		*/
 		function find_username(url)
 		{
-			popup(url, 760, 570, '_usersearch');
+			popup(url, 780, 570, '_usersearch');
 			return false;
 		}
-	
+
 		/**
 		* New function for handling multiple calls to window.onload and window.unload by pentapenguin
 		*/
@@ -69,7 +67,7 @@
 				eval(onload_functions[i]);
 			}
 		};
-	
+
 		window.onunload = function()
 		{
 			for (var i = 0; i < onunload_functions.length; i++)
@@ -77,77 +75,114 @@
 				eval(onunload_functions[i]);
 			}
 		};
-	
 	// ]]>
 	</script>
-	
-	<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
+
+	<script src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 </head>
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
-<div id="wrapper">
+<div id="wrapper" class="inventea-wrapper">
+	<header class="inventea-header">
+		<div class="inventea-user-bar">
+			<span class="inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
 
-	<div id="header">
-		<div id="account">
-			<ul class="leftside">
-				<li><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></li>
-			</ul>
-			
 			<!-- IF not S_IS_BOT -->
-				<ul class="rightside">
-					<!-- IF S_USER_LOGGED_IN -->
-						<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-						<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
-						<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li> <!-- ENDIF -->
-						<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li> <!-- ENDIF -->
-					<!-- ELSE -->
-						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+				<nav class="inventea-user-menu">
+					<ul class="inventea-menu">
+						<!-- IF S_USER_LOGGED_IN -->
+							<li class="inventea-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
+							<!-- IF S_DISPLAY_PM --><li class="inventea-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+							<!-- IF S_DISPLAY_SEARCH --><li class="inventea-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li><!-- ENDIF -->
+							<!-- IF U_RESTORE_PERMISSIONS --><li class="inventea-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+						<!-- ENDIF -->
+
+						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventea-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+						<li class="inventea-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+					</ul>
+				</nav>
+			<!-- ENDIF -->
+
+			<nav class="inventea-mobile-menu">
+				<button class="inventea-toggle inventea-mobile-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
+
+				<ul class="inventea-dropdown inventea-mobile-dropdown-menu">
+					<li class="inventea-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa fa-home fa-fw"></i> {L_INDEX}</a></li>
+					<li class="inventea-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle fa-fw"></i> {L_FAQ}</a></li>
+					<!-- IF S_DISPLAY_SEARCH --><li class="inventea-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search fa-fw"></i> {L_SEARCH}</a></li><!-- ENDIF -->
+					<!-- IF U_TEAM --><li class="inventea-dropdown-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}"><i class="fa fa-users fa-fw"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
+					<!-- IF not S_IS_BOT and S_DISPLAY_MEMBERLIST --><li class="inventea-dropdown-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users fa-fw"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
+
+					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+						<li class="inventea-dropdown-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user fa-fw"></i> {L_PROFILE}</a></li>
+						<!-- IF S_DISPLAY_PM --><li class="inventea-dropdown-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}"><i class="fa fa-envelope fa-fw"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+						<!-- IF S_DISPLAY_SEARCH --><li class="inventea-dropdown-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}"><i class="fa fa-comments fa-fw"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
+						<!-- IF U_RESTORE_PERMISSIONS --><li class="inventea-dropdown-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}"><i class="fa fa-retweet fa-fw"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+						<!-- IF U_MCP --><li class="inventea-dropdown-menu-item"><a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-tachometer fa-fw"></i> {L_MCP}</a></li><!-- ENDIF -->
+						<!-- IF U_ACP --><li class="inventea-dropdown-menu-item"><a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cog fa-fw"></i> {L_ACP}</a></li><!-- ENDIF -->
 					<!-- ENDIF -->
-					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
-					<!-- IF U_SEND_PASSWORD --><li><a href="{U_SEND_PASSWORD}" title="{L_FORGOT_PASS}">{L_FORGOT_PASS}</a></li><!-- ENDIF -->
+					
+					<!-- IF not S_IS_BOT -->
+						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventea-dropdown-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}"><i class="fa fa-check-circle fa-fw"></i> {L_REGISTER}</a></li><!-- ENDIF -->
+						<li class="inventea-dropdown-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-in fa-fw"></i> {L_LOGIN_LOGOUT}</a></li>
+					<!-- ENDIF -->
 				</ul>
-			<!-- ENDIF -->
+			</nav>
 		</div>
-		
-		<div id="illustration">
-			<div id="site-description">
+	</header>
+</div>
+
+<div class="inventea-slider">
+	<!-- Default slide -->
+	<div class="inventea-slide inventea-slide-default">
+		<div class="inventea-slide-inner">
+			<div class="inventea-sitename">
 				<h1><a href="{U_INDEX}" title="{L_INDEX}">{SITENAME}</a></h1>
-				<p>{SITE_DESCRIPTION}</p>
+				<span>{SITE_DESCRIPTION}</span>
 			</div>
-		</div>
-		
-		<div id="main-navigation">
-			<ul id="primary-navigation" class="leftside">
-				<li><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
-				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
-				<!-- IF not S_IS_BOT-->
-					<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
-					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
-					<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-				<!-- ENDIF -->
-			</ul>
-			
-			<!-- IF U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
-				<ul class="rightside linklist icons">
-					<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
-				</ul>
-			<!-- ENDIF -->
 		</div>
 	</div>
 
-	<div id="container">
-	
+	<!-- Example second slide -->
+	<!-- <div class="inventea-slide inventea-slide-example"></div> -->
+</div>
+
+<div class="inventea-wrapper">
+	<div class="inventea-forum-bar">
+		<nav class="inventea-forum-menu">
+			<ul class="inventea-menu">
+				<li class="inventea-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
+				<li class="inventea-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+				<!-- IF S_DISPLAY_SEARCH --><li class="inventea-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
+				<!-- IF U_TEAM --><li class="inventea-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li><!-- ENDIF -->
+				
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li class="inventea-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+
+					<!-- IF S_USER_LOGGED_IN -->
+						<!-- IF U_MCP --><li class="inventea-menu-item"><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
+						<!-- IF U_ACP --><li class="inventea-menu-item"><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+			</ul>
+		</nav>
+	</div>
+
+	<div class="inventea-content">
+		<div class="inventea-breadcrumbs-container">
+			<ul class="inventea-breadcrumbs">
+				<li class="inventea-breadcrumbs-item">{L_JUMP_TO}: <a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+				
+				<!-- BEGIN navlinks -->
+					<li class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+				<!-- END navlinks -->
+			</ul>
+		</div>
+
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 			<div id="information" class="rules">
 				<div class="inner"><span class="corners-top"><span></span></span>
-				
-				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
-				
+					<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
 				<span class="corners-bottom"><span></span></span></div>
 			</div>
 		<!-- ENDIF -->

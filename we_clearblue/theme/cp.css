@@ -124,29 +124,73 @@ ul.cplist {
 ----------------------------------------*/
 #tabs {
 	line-height: normal;
-	margin: 15px 0 0 7px;
+	margin: 20px 0 -1px 7px;
 	min-width: 570px;
 }
 
 #tabs ul {
-	margin: 0;
+	margin:0;
 	padding: 0;
 	list-style: none;
 }
 
 #tabs li {
 	display: inline;
-	font-size: 10px;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
 	font-weight: bold;
 }
 
 #tabs a {
-	background: #eef3f8;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	margin: 0 1px;
-	padding: 7px 11px;
 	float: left;
+	background: none no-repeat 0% -35px;
+	margin: 0 1px 0 0;
+	padding: 0 0 0 5px;
+	text-decoration: none;
+	position: relative;
+	cursor: pointer;
+}
+
+#tabs a span {
+	float: left;
+	display: block;
+	background: none no-repeat 100% -35px;
+	padding: 6px 10px 6px 5px;
+	color: #828282;
+	white-space: nowrap;
+}
+
+#tabs a:hover span {
+	color: #bcbcbc;
+}
+
+#tabs .activetab a {
+	background-position: 0 0;
+	border-bottom: 1px solid #ebebeb;
+}
+
+#tabs .activetab a span {
+	background-position: 100% 0;
+	padding-bottom: 7px;
+	color: #333333;
+}
+
+#tabs a:hover {
+	background-position: 0 -70px;
+}
+
+#tabs a:hover span {
+	background-position:100% -70px;
+}
+
+#tabs .activetab a:hover {
+	background-position: 0 0;
+}
+
+#tabs .activetab a:hover span {
+	color: #000000;
+	background-position: 100% 0;
 }
 
 /* Mini tabbed menu used in MCP
@@ -163,16 +207,16 @@ ul.cplist {
 }
 
 #minitabs li {
+	display: block;
 	float: right;
+	padding: 0 10px 4px 10px;
 	font-size: 1em;
 	font-weight: bold;
 	background-color: #f2f2f2;
-	margin-left: 3px;
+	margin-left: 2px;
 }
 
 #minitabs a {
-	padding: 5px 10px;
-	display: block;
 }
 
 #minitabs a:hover {
@@ -350,43 +394,47 @@ ol.def-rules li {
 }
 
 /* PM marking colours */
-.pm_border {
-	height: 50px;
-	margin: -8px;
-	float: left;
-	position: relative;
+.pmlist li.bg1 {
+	padding: 0 3px;
 }
 
-.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist li.bg2 {
+	padding: 0 3px;
+}
+
+.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #bcbcbc;
 	border-right-color: #bcbcbc;
 }
 
-.pmlist .pm_marked_colour, .pm_marked_colour {
-	border-left: solid 1px #ffffff;
-	border-width: 0 2px;
+.pmlist li.pm_marked_colour, .pm_marked_colour {
+	padding: 0;
+	border: solid 3px #ffffff;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_replied_colour, .pm_replied_colour {
-	border-left: solid 1px #c2c2c2;
-	border-width: 0 2px;
+.pmlist li.pm_replied_colour, .pm_replied_colour {
+	padding: 0;
+	border: solid 3px #c2c2c2;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_friend_colour, .pm_friend_colour {
-	border-left: solid 1px #bdbdbd;
-	border-width: 0 2px;
+.pmlist li.pm_friend_colour, .pm_friend_colour {
+	padding: 0;
+	border: solid 3px #bdbdbd;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_foe_colour, .pm_foe_colour {
-	border-left: solid 1px #000000;
-	border-width: 0 2px;
+.pmlist li.pm_foe_colour, .pm_foe_colour {
+	padding: 0;
+	border: solid 3px #000000;
+	border-width: 0 3px;
 }
 
 .pm-legend {
 	border-left-width: 10px;
 	border-left-style: solid;
 	border-right-width: 0;
-	margin-top: 5px;
 	margin-bottom: 3px;
 	padding-left: 3px;
 }

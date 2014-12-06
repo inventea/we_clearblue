@@ -1,4 +1,5 @@
-/* 
+/* Style Sheet Tweaks
+
 These style definitions are mainly IE specific 
 tweaks required due to its poor CSS support.
 -------------------------------------------------*/
@@ -75,10 +76,6 @@ dl.icon {
 	width: 25%;
 }
 
-* html .pm_border {
-	margin-left: -4px;
-}
-
 /* Correctly clear floating for details on profile view */
 *:first-child+html dl.details dd {
 	margin-left: 30%;
@@ -107,18 +104,4 @@ dl.icon {
 #minitabs {
 	white-space: nowrap;
 	*min-width: 50%;
-}
-
-/* Ugly structure hacks for IE6 */
-* html #wrapper {
-	width: 980px;
-}
-
-* html #footer {
-	padding: 10px;
-	position: static;
-}
-
-* html #footer-fixed {
-	display: none;
 }
