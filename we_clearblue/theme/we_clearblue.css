@@ -208,6 +208,11 @@ a:active {
 	.inventea-slide-inner {
 		min-height: 172px;
 	}
+
+	.inventea-slide-default > .inventea-slide-inner {
+		background: url("{T_THEME_PATH}/images/dashboard_clean.jpg") no-repeat right center;
+		background-size: cover;
+	}
 }
 
 /**
