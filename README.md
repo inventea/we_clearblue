@@ -40,4 +40,5 @@ Assets
 ------
 
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.1.0
-* [Zepto.js](http://zeptojs.com) 1.1.4 (lightweight jQuery alternative)
+* [jQuery](http://jquery.com) 2.1.1
+* [slick](http://kenwheeler.github.io/slick/) 1.3.15
