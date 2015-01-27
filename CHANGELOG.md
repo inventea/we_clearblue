@@ -1,3 +1,11 @@
+2.0.1
+-----
+
+- Update for phpBB 3.0.13
+- Update jQuery 2.1.3
+- Update Font Awesome 4.3.0 and register link icon from mobile view
+
+
 2.0.0
 -----
 
