@@ -1,131 +1,50 @@
+		<!-- EVENT overall_footer_content_after -->
+		<!-- EVENT overall_footer_page_body_after -->
 	</div>
-</div>
 
-<div class="inventea-footer-wrapper">
-	<div class="inventea-footer">
-		<div class="inventea-widgets-wrapper">
-			<!-- IF S_ENABLE_FEEDS -->
-				<div class="inventea-widget inventea-list-widget">
-					<h4 class="inventea-widget-title">{L_FEED}</h4>
+	<div class="inventea-footer-wrapper">
+		<div class="inventea-footer" role="contentinfo">
+			<!-- INCLUDE navbar_footer.html -->
 
-					<ul class="inventea-widget-links">
-						<!-- IF S_ENABLE_FEEDS_OVERALL --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}" title="{L_FEED} - {SITENAME}">{SITENAME}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_NEWS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=news" title="{L_FEED} - {L_FEED_NEWS}">{L_FEED_NEWS}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_FORUMS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=forums" title="{L_FEED} - {L_ALL_FORUMS}">{L_ALL_FORUMS}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_TOPICS --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=topics" title="{L_FEED} - {L_FEED_TOPICS_NEW}">{L_FEED_TOPICS_NEW}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?mode=topics_active" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}">{L_FEED_TOPICS_ACTIVE}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?f={S_FORUM_ID}" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}">{L_FORUM} - {FORUM_NAME}</a></li><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><li class="inventea-widget-links-item"><i class="fa fa-rss fa-fw"></i> <a href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}">{L_TOPIC} - {TOPIC_TITLE}</a></li><!-- ENDIF -->
-					</ul>
-				</div>
-			<!-- ENDIF -->
-
-			<div class="inventea-widget inventea-list-widget">
-				<h4 class="inventea-widget-title">{L_GOTO_PAGE}</h4>
-
-				<ul class="inventea-widget-links">
-					<!-- IF not S_IS_BOT -->
-						<!-- IF S_WATCH_FORUM_LINK --><li class="inventea-widget-links-item"><i class="fa fa-star fa-fw"></i> <a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-						<!-- IF U_WATCH_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-star fa-fw"></i> <a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BOOKMARK_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-bookmark fa-fw"></i> <a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BUMP_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-gavel fa-fw"></i>  <a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-					<!-- ENDIF -->
-
-					<!-- IF U_EMAIL_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-envelope fa-fw"></i> <a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_PM --><li class="inventea-widget-links-item"><i class="fa fa-envelope fa-fw"></i> <a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_TOPIC --><li class="inventea-widget-links-item"><i class="fa fa-print fa-fw"></i> <a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_PM --><li class="inventea-widget-links-item"><i class="fa fa-print fa-fw"></i> <a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"> {L_PRINT_PM}</a></li><!-- ENDIF -->
-
-					<!-- IF not S_IS_BOT -->
-						<!-- IF S_DISPLAY_SEARCH --><li class="inventea-widget-links-item"><i class="fa fa-search fa-fw"></i> <a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></li><!-- ENDIF -->
-						<!-- IF S_USER_LOGGED_IN --><li class="inventea-widget-links-item"><i class="fa fa-user fa-fw"></i> <a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li><!-- ENDIF -->
-					<!-- ENDIF -->
-
-					<!-- IF U_ACP --><li class="inventea-widget-links-item"><i class="fa fa-cog fa-fw"></i> <a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-				</ul>
-			</div>
-
-			<!--
-			Short description about your website or project. If you don't like to display
-			this widget, just remove the whole <div> (lines 54-71) or comment it. Feel free
-			to modify the social buttons below. For more icons visit:
-			http://fortawesome.github.io/Font-Awesome/icons/#brand
-			-->
-			<div class="inventea-widget inventea-text-widget">
-				<h4 class="inventea-widget-title">About us</h4>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor lectus quis mattis aliquet.
-				Cras in nibh et eros porttitor facilisis. Nunc egestas eget leo vel dapibus. Cum sociis natoque
-				penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.
-				Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-				Nunc rutrum dui ipsum, ac tincidunt felis pharetra sed. Aenean viverra sagittis interdum.</p>
-
-				<ul class="inventea-social-icons">
-					<li class="inventea-social-icons-item"><a href="https://www.facebook.com/inventea"><i class="fa fa-facebook"></i></a></li>
-					<li class="inventea-social-icons-item"><a href="https://plus.google.com/+INVENTEA"><i class="fa fa-google-plus"></i></a></li>
-					<li class="inventea-social-icons-item"><a href="https://twitter.com/inventea"><i class="fa fa-twitter"></i></a></li>
-					<li class="inventea-social-icons-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li class="inventea-social-icons-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					<li class="inventea-social-icons-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
-			</div>
+			<footer class="inventea-credits">
+				<!-- EVENT overall_footer_copyright_prepend -->
+				{CREDIT_LINE}<br />
+				<!-- IF TRANSLATION_INFO -->{TRANSLATION_INFO}<br /><!-- ENDIF -->
+				Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a>
+				<!-- EVENT overall_footer_copyright_append -->
+				<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+			</footer>
 		</div>
+	</div>
 
-		<div class="inventea-breadcrumbs-container">
-			<ul class="inventea-breadcrumbs">
-				<li class="inventea-breadcrumbs-item">{L_JUMP_TO}: <a href="{U_INDEX}">{L_INDEX}</a></li>
+	<div id="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
+		<div id="darken">&nbsp;</div>
+	</div>
 
-				<!-- BEGIN navlinks -->
-					<li class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
-				<!-- END navlinks -->
-			</ul>
-		</div>
-
-		<ul class="inventea-footer-menu">
-			<!-- IF not S_IS_BOT --><li class="inventea-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
-			<li class="inventea-footer-menu-item">{S_TIMEZONE}</li>
-		</ul>
-
-		<footer class="inventea-credits">
-			{CREDIT_LINE}<br />
-			Style we_clearblue created by <a href="https://inventea.com" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a>
-			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
-			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
-		</footer>
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="{L_ERROR}" data-l-timeout-processing-req="{L_TIMEOUT_PROCESSING_REQ}">
+		<a href="#" class="alert_close"></a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close"></a>
+		<div class="alert_text"></div>
 	</div>
 
 	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 </div>
 
-<script src="{T_TEMPLATE_PATH}/assets/jquery/jquery-2.1.3.min.js"></script>
-<script src="{T_TEMPLATE_PATH}/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="{T_JQUERY_LINK}"></script>
+<!-- IF S_ALLOW_CDN --><script type="text/javascript">window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));</script><!-- ENDIF -->
+<script type="text/javascript" src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
+<!-- INCLUDEJS forum_fn.js -->
+<!-- INCLUDEJS ajax.js -->
 
-<script>
-$(function() {
-	$('.inventea-slider').slick({
-		draggable: false,
-		fade: true,
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					draggable: true,
-					fade: true
-				}
-			}
-		]
-	});
-});
+<!-- EVENT overall_footer_after -->
 
-$('.inventea-toggle').click(function(e) {
-	$(this).next('.inventea-dropdown').toggle()
-	e.stopPropagation();
-});
+<!-- IF S_PLUPLOAD --><!-- INCLUDE plupload.html --><!-- ENDIF -->
+{$SCRIPTS}
 
-$(document).click(function() {
-	$('.inventea-dropdown').hide();
-});
-</script>
+<!-- EVENT overall_footer_body_after -->
 
 </body>
 </html>
