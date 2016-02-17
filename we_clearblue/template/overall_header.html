@@ -22,7 +22,7 @@
 <!-- ENDIF -->
 
 <!--
-	phpBB style name: we_universal
+	phpBB style name: we_clearblue
 	Based on style:   prosilver (this is the default phpBB3 style)
 	Original author:  Tom Beddard ( http://www.subBlue.com/ )
 	Modified by:      INVENTEA ( https://inventea.com/ )
@@ -80,13 +80,15 @@
 <div id="wrap">
 	<a id="top" class="anchor" accesskey="t"></a>
 
-	<div class="inventea-headerbar">
-		<nav class="inventea-wrapper inventea-userbar">
+	<div class="inventea-wrapper">
+		<nav class="inventea-user-bar">
 			<!-- INCLUDE navbar_responsive_header.html -->
 
 			<!-- EVENT overall_header_searchbox_before -->
 
 			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+				<!-- EVENT navbar_header_quick_links_before -->
+
 				<!-- IF S_REGISTERED_USER -->
 					<li id="username_logged_in" class="rightside <!-- IF CURRENT_USER_AVATAR --> no-bulletin<!-- ENDIF -->" data-skip-responsive="true">
 						<!-- EVENT navbar_header_username_prepend -->
@@ -113,12 +115,12 @@
 					</li>
 					<!-- IF S_DISPLAY_PM -->
 						<li class="small-icon icon-pm rightside" data-skip-responsive="true">
-							<a href="{U_PRIVATEMSGS}" role="menuitem"><span>{L_PRIVATE_MESSAGES}</span><!-- IF PRIVATE_MESSAGE_COUNT > 0 --><strong>{PRIVATE_MESSAGE_COUNT}</strong><!-- ENDIF --></a>
+							<a href="{U_PRIVATEMSGS}" role="menuitem">{L_PRIVATE_MESSAGES}<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> (<strong>{PRIVATE_MESSAGE_COUNT}</strong>)<!-- ENDIF --></a>
 						</li>
 					<!-- ENDIF -->
 					<!-- IF S_NOTIFICATIONS_DISPLAY -->
 						<li class="small-icon icon-notification dropdown-container dropdown-{S_CONTENT_FLOW_END} rightside" data-skip-responsive="true">
-							<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger"><span>{L_NOTIFICATIONS}</span><!-- IF NOTIFICATIONS_COUNT > 0 --><strong>{NOTIFICATIONS_COUNT}</strong><!-- ENDIF --></a>
+							<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger">{L_NOTIFICATIONS}<!-- IF NOTIFICATIONS_COUNT > 0 --> (<strong>{NOTIFICATIONS_COUNT}</strong>)<!-- ENDIF --></a>
 							<!-- INCLUDE notification_dropdown.html -->
 						</li>
 					<!-- ENDIF -->
@@ -129,15 +131,22 @@
 					<!-- ENDIF -->
 					<!-- EVENT navbar_header_logged_out_content -->
 				<!-- ENDIF -->
+
+				<!-- IF S_DISPLAY_SEARCH -->
+					<!-- IF S_USER_LOGGED_IN --><li class="small-icon rightside responsive-hide" data-skip-responsive="true"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li><!-- ENDIF -->
+					<!-- IF S_LOAD_UNREADS --><li class="small-icon rightside responsive-hide" data-skip-responsive="true"><a href="{U_SEARCH_UNREAD}" role="menuitem">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
+					<!-- IF S_REGISTERED_USER --><li class="small-icon rightside responsive-hide" data-skip-responsive="true"><a href="{U_SEARCH_SELF}" role="menuitem">{L_SEARCH_SELF}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+
+				<!-- EVENT navbar_header_quick_links_after -->
+
+				<li class="small-icon leftside"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></li>
 			</ul>
 		</nav>
 	</div>
 
 	<header class="inventea-header">
 		<div class="inventea-dashboard" role="banner">
-			<!-- EVENT overall_header_navbar_before -->
-			<!-- INCLUDE navbar_header.html -->
-
 			<div class="inventea-sitename">
 				<h1><a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a></h1>
 				<span>{SITE_DESCRIPTION}</span>
@@ -145,36 +154,41 @@
 		</div>
 	</header>
 
-	<div class="inventea-wrapper inventea-content" role="main">
-		<!-- EVENT overall_header_page_body_before -->
+	<div class="inventea-wrapper">
+		<div class="inventea-forum-bar">
+			<!-- INCLUDE navbar_header.html -->
+		</div>
 
-		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
-			<!-- IF S_INDEX -->
-				<li class="rightside inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></li>
+		<div class="inventea-content" role="main">
+			<!-- EVENT overall_header_page_body_before -->
+
+			<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+				<!-- IF S_INDEX -->
+					<li class="rightside inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></li>
+				<!-- ENDIF -->
+
+				<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+				<!-- EVENT overall_header_breadcrumbs_before -->
+				<li class="small-icon breadcrumbs">
+					<!-- IF U_SITE_HOME --><span class="crumb"{$MICRODATA}><a href="{U_SITE_HOME}" data-navbar-reference="home" itemprop="url"><span itemprop="title">{L_SITE_HOME}</span></a></span><!-- ENDIF -->
+					<!-- EVENT overall_header_breadcrumb_prepend -->
+					<span class="crumb"{$MICRODATA}><a href="{U_INDEX}" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">{L_INDEX}</span></a></span>
+					<!-- BEGIN navlinks -->
+						<!-- EVENT overall_header_navlink_prepend -->
+						<span class="crumb"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
+						<!-- EVENT overall_header_navlink_append -->
+					<!-- END navlinks -->
+					<!-- EVENT overall_header_breadcrumb_append -->
+				</li>
+				<!-- EVENT overall_header_breadcrumbs_after -->
+			</ul>
+
+			<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+				<div id="information" class="rules">
+					<div class="inner">
+						<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+					</div>
+				</div>
 			<!-- ENDIF -->
 
-			<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
-			<!-- EVENT overall_header_breadcrumbs_before -->
-			<li class="small-icon breadcrumbs">
-				<!-- IF U_SITE_HOME --><span class="crumb"{$MICRODATA}><a href="{U_SITE_HOME}" data-navbar-reference="home" itemprop="url"><span itemprop="title">{L_SITE_HOME}</span></a></span><!-- ENDIF -->
-				<!-- EVENT overall_header_breadcrumb_prepend -->
-				<span class="crumb"{$MICRODATA}><a href="{U_INDEX}" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">{L_INDEX}</span></a></span>
-				<!-- BEGIN navlinks -->
-					<!-- EVENT overall_header_navlink_prepend -->
-					<span class="crumb"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
-					<!-- EVENT overall_header_navlink_append -->
-				<!-- END navlinks -->
-				<!-- EVENT overall_header_breadcrumb_append -->
-			</li>
-			<!-- EVENT overall_header_breadcrumbs_after -->
-		</ul>
-
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-			<div id="information" class="rules">
-				<div class="inner">
-					<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
-				</div>
-			</div>
-		<!-- ENDIF -->
-
-		<!-- EVENT overall_header_content_before -->
+			<!-- EVENT overall_header_content_before -->

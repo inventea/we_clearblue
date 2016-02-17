@@ -3,7 +3,7 @@
  */
 html,
 body {
-	background: #f9f9f9;
+	background: #fff;
 	color: #525252;
 }
 
@@ -15,9 +15,11 @@ body {
 }
 
 h1 {
-	margin: 0 0 5px 0;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 36px;
+	margin: 0;
+	margin-bottom: 8px;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 48px;
+	font-weight: normal;
 }
 
 h2 {
@@ -69,7 +71,7 @@ a:active {
 	max-width: none;
 	min-width: 0;
 	margin: 0;
-	padding: 15px 0;
+	padding: 0;
 	border: 0;
 	border-radius: 0;
 	background: none;
@@ -79,265 +81,92 @@ a:active {
 .inventea-dashboard,
 .inventea-footer {
 	box-sizing: border-box;
-	width: 95%;
 	max-width: 1170px;
 	margin: auto;
 }
 
-.inventea-wrapper {
-	padding: 15px 20px;
-	border: 2px solid #e7e7e7;
-	background: #fff;
-}
-
-.inventea-userbar {
+.inventea-wrapper,
+.inventea-footer {
 	position: relative;
-	height: 49px;
-	padding-top: 14px;
-	border-bottom: 0;
-	color: #959595;
+	width: 95%;
 }
 
 .inventea-header {
-	width: 100%;
-	background: #292c2f;
+	border-bottom: 1px solid #bad1de;
+	background: #e0edf4;
 }
 
 .inventea-dashboard {
-	position: relative;
-	min-height: 240px;
-	background: url("./images/dashboard.jpg") center center no-repeat;
+	background: url("./images/dashboard.jpg") no-repeat right center;
 	background-size: cover;
 }
 
-.inventea-content {
-	position: relative;
-	border-top: 0;
-}
-
-.inventea-content:after {
-	content: "";
+.inventea-footer-wrapper,
+.inventea-footer-wrapper::after {
 	display: block;
-	clear: both;
+	width: 100%;
+	background: #585757;
 }
 
 .inventea-footer-wrapper {
-	display: block;
-	box-shadow: inset 0 20px 30px -20px #d5d5d5;
-	width: 100%;
-	margin-top: -25px;
-	border-top: 1px solid #e2e2e2;
+	margin-top: 24px;
+	padding: 26px 0;
 }
 
 .inventea-footer {
-	margin: 42px auto;
-	padding: 0 22px;
-	color: #959595;
+	overflow: hidden;
+	color: #e7e4e4;
 	line-height: 18px;
 	font-size: 12px;
 }
 
 /**
- * Forum name and description
+ * Navigation bars
+ *
+ * Main menus located in header. Consists of two navigation bars: user related
+ * links on the top and forum related links on the bottom.
  */
-.inventea-sitename {
-	padding: 76px 50px 98px;
-	color: #fff;
-	font-size: 14px;
-}
-
-.inventea-sitename a {
+.inventea-user-bar,
+.inventea-forum-bar {
+	padding: 0 20px;
+	background: #1f3e59; /* Fallback for older browsers */
+	background: linear-gradient(to bottom, #1f3e59 0%, #153753 100%);
 	color: #fff;
 }
 
-/**
- * User menu
- *
- * Navigation bar on top of forum (above dashboard) containing notifications,
- * private messages and dropdown profile links.
- *
- * Sticky navigation on scroll provided by Headroom.js:
- * http://wicky.nillia.ms/headroom.js/
- */
-ul.linklist.inventea-user-menu > li {
-	margin-left: 0;
-}
-
-ul.linklist.inventea-user-menu > li + li {
-	margin-right: 21px;
-}
-
-/* Notifications and PMs counters */
-.inventea-user-menu > li > a > strong {
-	float: left;
-	margin: -3px 6px 0 -11px;
-	padding: 1px 3px 2px;
-	border-radius: 2px;
-	background: #bc2a4d;
-	color: #fff;
-	line-height: 1;
-	font-size: 11px;
-	font-weight: normal;
-}
-
-/* Reset counters padding in responsive view */
-.compact .icon-notification > a > strong,
-.compact .icon-pm > a > strong {
-	padding-left: 3px;
-}
-
-/* Menu items icons */
-.inventea-user-menu > li > a:before {
-	float: left;
-	margin-right: 6px;
-	color: #6b6b6b;
-	font-family: FontAwesome;
-	font-size: 16px;
-}
-
-.inventea-user-menu > .icon-logout > a:before 		{ content: "\f090"; }
-.inventea-user-menu > .icon-register > a:before 	{ content: "\f234"; }
-.inventea-user-menu > .icon-pm > a:before 			{ content: "\f0e0"; }
-.inventea-user-menu > .icon-notification > a:before { content: "\f0f3"; }
-
-/* Small avatar near username */
-.header-avatar img {
-	max-height: 21px;
-	margin: -3px 3px 0 0;
-	border-radius: 3px;
-}
-
-/**
- * Forum navigation
- *
- * Main menu located in header (dashboard). Consists of two navigation lines:
- * posts/topics related links on top and general forum links on bottom.
- *
- * Displayed only on devices with screen width bigger than 700px. On devices
- * with low screen resolution it's replaced by dropdown menu with activation button
- * located in user menu.
- */
-.inventea-posts-menu,
-.inventea-forum-menu {
+.inventea-user-bar {
 	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 39px;
+	padding-top: 10px;
+	box-sizing: border-box;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	line-height: 18px;
 }
 
-.inventea-posts-menu {
-	right: 0;
+.inventea-forum-bar {
+	height: 45px;
+	margin-top: -23px;
+	border-radius: 7px;
+	line-height: 45px;
 }
 
 .inventea-forum-menu {
-	bottom: 0;
+	font-weight: bold;
 }
 
-.inventea-menu {
-	display: block;
-	list-style: none;
-}
-
-.inventea-menu li {
-	float: left;
-	background: none;
-}
-
-/* Space between menu items */
-.inventea-menu li + li {
-	margin-left: 4px;
-}
-
-.inventea-menu li > a {
-	display: block;
-	padding: 8px 10px;
-	background: #333;
-	background: rgba(0, 0, 0, 0.5);
-	color: #eee;
-}
-
-.inventea-menu li > a:focus,
-.inventea-menu li > a:hover,
-.inventea-menu li > a:active {
-	background: rgba(0, 0, 0, 0.9);
-	text-decoration: none;
-}
-
-/**
- * Breadcrumbs and footer navigation
- */
-#nav-breadcrumbs {
-	margin-top: 3px;
-	margin-bottom: 24px;
-	border: 0;
+.inventea-user-menu > li > a,
+.inventea-forum-menu > li > a {
+	color: #fff;
 }
 
 ul.linklist > li {
 	margin: 0;
 	padding: 0;
-	line-height: 18px;
+	line-height: inherit;
 	font-size: 12px;
-}
-
-#nav-footer > li.rightside {
-	float: left;
-	margin: 0;
-}
-
-/* Items separator */
-.breadcrumbs .crumb:before,
-.breadcrumbs .crumb:first-child:before,
-ul.linklist > li:not(.breadcrumbs):before,
-#nav-footer > li.responsive-menu:after {
-	content: "/";
-	float: right;
-	margin: 0 10px;
-	padding: 0;
-	color: #cacaca;
-	font-size: 14px;
-	font-weight: normal;
-}
-
-ul.linklist > li:not(.breadcrumbs):before,
-#nav-footer > li.responsive-menu:after {
-	float: left;
-}
-
-.breadcrumbs:last-child .crumb:last-child:before,
-#nav-footer .breadcrumbs .crumb:last-child:before,
-ul.linklist > li.inventea-time:before {
-	content: none;
-}
-
-li.breadcrumbs span:first-child > a {
-	padding: 0;
-}
-
-.breadcrumbs .crumb {
-	font-weight: normal;
-}
-
-.breadcrumbs.wrapped .crumb a,
-.breadcrumbs.wrapped .crumb.wrapped-medium a,
-.breadcrumbs.wrapped .crumb.wrapped-tiny a {
-	letter-spacing: normal;
-}
-
-/* Responsive menu hamburger link */
-ul.linklist li.responsive-menu {
-	margin: 0 2px;
-}
-
-ul.linklist li.responsive-menu a.responsive-menu-link {
-	margin: 0 1px;
-	line-height: 18px;
-}
-
-ul.linklist li.responsive-menu a.responsive-menu-link:before {
-	top: 5px;
-	border-color: #525252;
-}
-
-ul.linklist li.responsive-menu a.responsive-menu-link:hover:before,
-ul.linklist li.responsive-menu.visible a.responsive-menu-link:before {
-	border-color: #bc2a4d;
 }
 
 /* Remove links icons */
@@ -347,6 +176,107 @@ ul.linklist .small-icon {
 
 ul.linklist .small-icon > a {
 	padding: 0;
+}
+
+/**
+ * User menu
+ *
+ * Navigation bar on the top of forum containing notifications, private messages
+ * and dropdown profile links.
+ */
+ul.linklist.inventea-user-menu > li {
+	margin-left: 0;
+}
+
+ul.linklist.inventea-user-menu > li + li {
+	margin-right: 18px;
+}
+
+ul.linklist .icon-pm strong,
+ul.linklist .icon-notification strong {
+	font-weight: normal;
+}
+
+/* Small avatar near username */
+.header-avatar img {
+	max-height: 19px;
+	margin: -2px 3px 0 0;
+	border-radius: 3px;
+}
+
+.compact .icon-notification > a > strong,
+.compact .icon-pm > a > strong {
+	padding-left: 0;
+}
+
+/* Hide empty responsive menu dropdown created for current time/last visit */
+.inventea-user-menu .responsive-menu {
+	display: none;
+}
+
+/**
+ * Forum navigation
+ *
+ * Displayed only on devices with screen width bigger than 700px. On devices
+ * with low screen resolution it's replaced by dropdown menu with activation
+ * button located in user menu.
+ */
+.inventea-forum-menu {
+	display: block;
+	list-style: none;
+}
+
+/* Space between menu items */
+ul.linklist.inventea-forum-menu > li {
+	float: left;
+	padding: 0 14px;
+	border-right: 1px solid #102435;
+	border-left: 1px solid #1c3e5c;
+}
+
+ul.linklist.inventea-forum-menu > li:before {
+	content: none;
+}
+
+ul.linklist.inventea-forum-menu > li:first-child {
+	padding-left: 0;
+	border-left: 0;
+}
+
+ul.linklist.inventea-forum-menu > li:nth-last-child(2),
+ul.linklist.inventea-forum-menu > li:last-child {
+	padding-right: 0;
+	border-right: 0;
+}
+
+ul.linklist.inventea-forum-menu > li > a {
+	color: #fff;
+}
+
+ul.linklist.inventea-forum-menu li.responsive-menu a.responsive-menu-link {
+	margin: 0;
+}
+
+ul.linklist.inventea-forum-menu li.responsive-menu a.responsive-menu-link:before {
+	border-color: #fff;
+}
+
+/**
+ * Forum name and description
+ */
+.inventea-sitename {
+	padding: 96px 60px 92px;
+	color: #535353;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 16px;
+}
+
+.inventea-sitename span {
+	margin-left: 18px;
+}
+
+.inventea-sitename a {
+	color: #103143;
 }
 
 /**
