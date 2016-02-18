@@ -4,7 +4,7 @@
 html,
 body {
 	background: #fff;
-	color: #525252;
+	color: #536482;
 }
 
 body {
@@ -32,7 +32,8 @@ h3 {
 	margin-top: 24px;
 	margin-bottom: 8px;
 	padding-bottom: 5px;
-	color: #3f3f3f;
+	border-color: #b7c9d7;
+	color: #105289;
 	font-size: 14px;
 }
 
@@ -49,7 +50,7 @@ hr {
 
 a:link,
 a:visited {
-	color :#3f3f3f;
+	color: #105289;
 }
 
 a:focus,
