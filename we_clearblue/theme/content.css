@@ -228,15 +228,6 @@ dd.redirect {
 	margin-top: 30px;
 }
 
-/* It is currently/Last visit was */
-.section-index .time {
-	display: none;
-}
-
-.logged-out #nav-breadcrumbs {
-	margin-bottom: 29px;
-}
-
 /* Action-bars (container for post/reply buttons, pagination, etc.) */
 .action-bar {
 	margin-bottom: 8px;

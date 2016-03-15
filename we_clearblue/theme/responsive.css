@@ -87,13 +87,21 @@ h1 {
 /**
  * Footer
  */
-#nav-footer,
-.inventea-credits {
+.inventea-widget {
 	float: none;
+	margin-left: 0 !important;
 }
 
-#nav-footer {
-	margin-top: 12px;
+.inventea-list-widget {
+	margin-bottom: 32px;
+}
+
+.inventea-text-widget {
+	max-width: 100%;
+}
+
+.inventea-text-widget p {
+	margin-bottom: 18px;
 }
 
 /**

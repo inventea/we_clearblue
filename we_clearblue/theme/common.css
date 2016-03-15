@@ -37,6 +37,11 @@ h3 {
 	font-size: 14px;
 }
 
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
 p {
 	margin-bottom: 18px;
 	line-height: 18px;
@@ -102,6 +107,12 @@ a:active {
 	background-size: cover;
 }
 
+.inventea-content:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 .inventea-footer-wrapper,
 .inventea-footer-wrapper::after {
 	display: block;
@@ -111,7 +122,8 @@ a:active {
 
 .inventea-footer-wrapper {
 	margin-top: 24px;
-	padding: 26px 0;
+	padding-top: 28px;
+	padding-bottom: 25px;
 }
 
 .inventea-footer {
@@ -281,31 +293,130 @@ ul.linklist.inventea-forum-menu li.responsive-menu a.responsive-menu-link:before
 }
 
 /**
+ * Breadcrumbs
+ */
+ul.linklist li.inventea-breadcrumbs {
+	float: none;
+}
+
+.inventea-breadcrumbs .crumb {
+	display: inline-block;
+	float: none;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+.inventea-breadcrumbs .crumb:before {
+	content: "\203a";
+	display: inline-block;
+	margin-left: 3px;
+	margin-right: 7px;
+	color: #b7c9d7;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.inventea-breadcrumbs .crumb:first-child:before {
+	content: none;
+}
+
+#nav-breadcrumbs {
+	margin-top: 22px;
+	margin-bottom: 20px;
+}
+
+.inventea-breadcrumbs-container {
+	margin-top: 22px;
+	margin-bottom: 18px;
+}
+
+.inventea-breadcrumbs-container .crumb:before {
+	color: #e7e4e4;
+}
+
+/**
  * Footer
  */
-.inventea-footer:after {
+.inventea-footer-wrapper::after {
 	content: "";
-	display: block;
-	clear: both;
+	position: fixed;
+	height: 100%;
 }
 
 .inventea-footer a {
-	color: #525252;
+	color: #bab6b6;
 }
 
-.inventea-footer a:focus,
-.inventea-footer a:hover,
-.inventea-footer a:active {
-	color: #bc2a4d;
+/* Widgets */
+.inventea-widgets-wrapper {
+	overflow: hidden;
 }
 
-.inventea-credits {
+.inventea-widget {
 	float: left;
 }
 
-#nav-footer {
-	float: right;
-	margin-bottom: 18px;
+.inventea-widget + .inventea-widget {
+	margin-left: 4%;
+}
+
+.inventea-widget-title {
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+/* Item list widget */
+.inventea-list-widget {
+	min-width: 25%;
+}
+
+.inventea-widget-links {
+	list-style: none;
+}
+
+.inventea-widget-links-item {
+	padding: 8px 0;
+	border-top: 1px solid #474646;
+	color: #bab6b6;
+}
+
+.inventea-widget-links-item:last-of-type {
+	border-bottom: 1px solid #474646;
+}
+
+.inventea-widget-links-item > .fa {
+	margin-right: 3px;
+}
+
+/* Text widget */
+.inventea-text-widget {
+	max-width: 40%;
+}
+
+/* Social icons */
+.inventea-social-icons {
+	list-style: none;
+	font-size: 18px;
+}
+
+.inventea-social-icons-item {
+	float: left;
+	margin-right: 8px;
+}
+
+.inventea-social-icons-item a {
+	display: block;
+	width: 28px;
+	border-radius: 50%;
+	background: #bab6b6;
+	color: #585757;
+	text-align: center;
+	line-height: 28px;
+}
+
+.inventea-social-icons-item a:focus,
+.inventea-social-icons-item a:hover {
+	background: #e7e4e4;
 }
 
 /**
