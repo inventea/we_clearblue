@@ -363,12 +363,14 @@ dl.faq dt {
 	background: #f1f1f1;
 }
 
-.post.bg1 .postprofile {
-	background-color: #f2f2f2;
+.post.bg1 .postprofile,
+.post.bg1 .postbody {
+	background-color: #eef3f8;
 }
 
-.post.bg2 .postprofile {
-	background-color: #ececec;
+.post.bg2 .postprofile,
+.post.bg2 .postbody {
+	background-color: #e1ebf5;
 }
 
 .post.reported .postprofile {
@@ -466,31 +468,6 @@ ul.profile-icons {
 .post .postbody {
 	border-top-right-radius: 7px;
 	border-bottom-right-radius: 7px;
-}
-
-.post.bg1 .postbody:before {
-	border-color: transparent #f8f8f8 transparent transparent;
-}
-
-.post.bg2 .postbody:before {
-	border-color: transparent #f2f2f2 transparent transparent;
-}
-
-.post.reported .postbody:before {
-	border-color: transparent #f7ecef transparent transparent;
-}
-
-/* Post message left triangle */
-.post .postbody:before {
-	content: "";
-	position: absolute;
-	display: block;
-	width: 0;
-	height: 0;
-	margin-top: 7px;
-	margin-left: -34px;
-	border-style: solid;
-	border-width: 14px 16px 14px 0;
 }
 
 .postbody h3,
