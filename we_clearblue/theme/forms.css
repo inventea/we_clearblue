@@ -92,14 +92,14 @@ select,
 select:hover,
 .inputbox,
 .inputbox:hover {
-	border-color: #ccc;
+	border-color: #bcc3ca;
 }
 
 select:focus,
 .inputbox:focus {
-	box-shadow: 0 0 5px #c2c2c2;
+	box-shadow: 0 0 5px #b6c1e5;
 	outline: 0;
-	border-color: #b1b1b1;
+	border-color: #8fb2cf;
 	color: #525252;
 }
 

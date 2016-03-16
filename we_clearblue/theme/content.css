@@ -541,7 +541,7 @@ p.author {
 
 /* Poll preview background */
 .section-posting #preview .content {
-	background: #f1f1f1;
+	background: #e1ebf5;
 }
 
 #postform .content .author {
@@ -1036,7 +1036,7 @@ a.topictitle:active {
 }
 
 a.topictitle:visited {
-	color: #6b6b6b;
+	color: #557fa1;
 }
 
 a.top {
@@ -1044,7 +1044,7 @@ a.top {
 	width: auto;
 	height: auto;
 	background: none;
-	color: #b5b5b5;
+	color: #b7c9d7;
 	text-indent: initial;
 	letter-spacing: normal;
 	font-size: 14px;
