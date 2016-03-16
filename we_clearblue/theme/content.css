@@ -373,12 +373,9 @@ dl.faq dt {
 	background-color: #e1ebf5;
 }
 
-.post.reported .postprofile {
-	background-color: #f4e1e6;
-}
-
+.post.reported .postprofile,
 .post.reported .postbody {
-	background-color: #f7ecef;
+	background-color: #f4e1e6;
 }
 
 .inventea-online {
@@ -486,8 +483,8 @@ ul.profile-icons {
 p.author {
 	margin: 1px 0 10px;
 	padding: 0 0 10px;
-	border-bottom: 1px dotted #c2c2c2;
-	color: #525252;
+	border-bottom: 1px dotted #b7c9d7;
+	color: #536482;
 	line-height: 18px;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
@@ -495,7 +492,7 @@ p.author {
 .postbody .content,
 .post:target .content {
 	overflow: auto;
-	color: #414141;
+	color: #333;
 	line-height: 21px;
 	font-size: 14px;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
@@ -509,7 +506,7 @@ p.author {
 	clear: none;
 	margin-top: 10px;
 	padding-top: 10px;
-	border-top: 1px dotted #c2c2c2;
+	border-top: 1px dotted #b7c9d7;
 	color: #525252;
 	line-height: 18px;
 	font-size: 12px;
