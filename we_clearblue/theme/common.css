@@ -228,6 +228,11 @@ ul.linklist .icon-notification strong {
 	display: none;
 }
 
+.no_notifications,
+.notification_text {
+	color: #105289;
+}
+
 /**
  * Forum navigation
  *
