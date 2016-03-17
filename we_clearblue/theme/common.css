@@ -227,6 +227,11 @@ ul.linklist .icon-notification strong {
 	padding-left: 0;
 }
 
+.compact .icon-notification > a > span,
+.compact .icon-pm > a > span {
+	display: inline;
+}
+
 /* Hide empty responsive menu dropdown created for current time/last visit */
 .inventea-user-menu .responsive-menu {
 	display: none;

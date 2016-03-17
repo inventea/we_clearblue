@@ -115,7 +115,7 @@
 					</li>
 					<!-- IF S_DISPLAY_PM -->
 						<li class="small-icon icon-pm rightside" data-skip-responsive="true">
-							<a href="{U_PRIVATEMSGS}" role="menuitem">{L_PRIVATE_MESSAGES}<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> (<strong>{PRIVATE_MESSAGE_COUNT}</strong>)<!-- ENDIF --></a>
+							<a href="{U_PRIVATEMSGS}" role="menuitem"><span class="responsive-hide">{L_PRIVATE_MESSAGES}</span><span class="hidden responsive-show-inline">{L_PM}</span> <!-- IF PRIVATE_MESSAGE_COUNT > 0 --> (<strong>{PRIVATE_MESSAGE_COUNT}</strong>)<!-- ENDIF --></a>
 						</li>
 					<!-- ENDIF -->
 					<!-- IF S_NOTIFICATIONS_DISPLAY -->
