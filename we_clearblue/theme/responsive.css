@@ -130,11 +130,11 @@ ul.topiclist dd.redirect {
 }
 
 .forabg ul.topiclist li.row dd.lastpost {
-	background-color: #f1f1f1;
+	background-color: #ecf2f7;
 }
 
 .forabg ul.topiclist li.row:nth-child(even) dd.lastpost {
-	background-color: #e9e9e9;
+	background-color: #e4ebf2;
 }
 
 @media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
