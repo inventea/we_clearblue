@@ -218,6 +218,10 @@ ul.linklist .icon-notification strong {
 	border-radius: 3px;
 }
 
+.username {
+	color: #fff;
+}
+
 .compact .icon-notification > a > strong,
 .compact .icon-pm > a > strong {
 	padding-left: 0;
