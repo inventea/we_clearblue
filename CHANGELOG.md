@@ -1,3 +1,15 @@
+2.1.0
+-----
+
+- First release for phpBB 3.1
+- Asset (CSS files and images) inheritance from prosilver
+- Single `we_clearblue.css` file split into modules
+- Use jQuery 1.11.0 bundled with phpBB
+- Moved media queries CSS to `responsive.css`
+- Additional `<body>` classes: `logged-in` and `logged-out`
+- Removed slick slider
+
+
 2.0.1
 -----
 
