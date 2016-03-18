@@ -357,11 +357,11 @@ dl.faq dt {
 }
 
 .post.bg1 {
-	background: #f8f8f8;
+	background: #eef3f8;
 }
 
 .post.bg2 {
-	background: #f1f1f1;
+	background: #e1ebf5;
 }
 
 .post.bg1 .postprofile,
@@ -547,6 +547,10 @@ p.author {
 #topicreview .postbody {
 	padding-bottom: 18px;
 	border-radius: 7px;
+}
+
+#topicreview .postbody {
+	width: 100%;
 }
 
 #postform .postbody:before {
