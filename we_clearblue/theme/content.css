@@ -744,12 +744,12 @@ blockquote cite {
 }
 
 a.postlink {
-	border-bottom: 1px dotted #6b6b6b;
-	color: #6b6b6b;
+	border-bottom: 1px dotted #105289;
+	color: #105289;
 }
 
 a.postlink:visited {
-	color: #959595;
+	color: #557fa1;
 }
 
 a.postlink:active,
@@ -1045,7 +1045,7 @@ a.top {
 a.top:focus,
 a.top:hover,
 a.top:active {
-	color: #959595;
+	color: #8fb2cf;
 }
 
 a.top2 {
