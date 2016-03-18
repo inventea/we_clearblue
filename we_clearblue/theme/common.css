@@ -218,7 +218,7 @@ ul.linklist .icon-notification strong {
 	border-radius: 3px;
 }
 
-.username {
+.header-profile > a > .username {
 	color: #fff;
 }
 
