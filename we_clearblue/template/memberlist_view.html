@@ -8,13 +8,21 @@
 <div class="panel bg1<!-- IF S_ONLINE --> online<!-- ENDIF -->">
 	<div class="inner">
 
-	<!-- IF S_ONLINE -->
+	<!-- IF S_ONLINE and not AVATAR_IMG -->
 		<div class="inventea-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
 	<!-- ENDIF -->
 
 	<!-- IF AVATAR_IMG -->
 		<dl class="left-box">
-			<dt class="profile-avatar">{AVATAR_IMG}</dt>
+			<dt class="profile-avatar">
+				<!-- IF S_ONLINE -->
+					<div style="text-align: center;">
+						<div class="inventea-online" style="margin-bottom: 6px;"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
+					</div>
+				<!-- ENDIF -->
+
+				{AVATAR_IMG}
+			</dt>
 			<!-- EVENT memberlist_view_rank_avatar_before -->
 			<!-- IF RANK_TITLE --><dd style="text-align: center;">{RANK_TITLE}</dd><!-- ENDIF -->
 			<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
