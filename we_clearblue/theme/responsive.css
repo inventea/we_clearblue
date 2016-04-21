@@ -1,0 +1,266 @@
+/**
+ * Common tags
+ */
+html,
+body {
+	background: #fff;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+/**
+ * Structure
+ */
+#wrap {
+	padding: 0;
+}
+
+.inventea-wrapper,
+.inventea-footer {
+	width: auto;
+	margin: 0 8px;
+}
+
+.inventea-dashboard {
+	background: url("./images/dashboard_clean.jpg") no-repeat right center;
+	background-size: cover;
+}
+
+/**
+ * Secondary dropdown menu
+ *
+ * Alternative menu displayed only on devices with low screen resolution (700px
+ * or less). Activated by button located in user menu. Consists all links from
+ * dashboard reduced to single dropdown (see navbar_responsive_header.html).
+ */
+.inventea-user-menu {
+	margin-right: 36px !important;
+}
+
+.inventea-forum-bar {
+	display: none;
+}
+
+.inventea-mobile-dropdown-menu {
+	position: absolute;
+	right: 10px;
+	display: block;
+	margin-top: -5px;
+}
+
+.inventea-mobile-dropdown-menu .dropdown {
+	top: 30px;
+}
+
+.inventea-toggle {
+	display: block;
+	padding: 5px 7px;
+	border-radius: 6px;
+	box-shadow: inset 0 0 10px 4px #102538;
+	color: #fff;
+	line-height: 1;
+	font-size: 18px;
+}
+
+.inventea-toggle:link,
+.inventea-toggle:focus,
+.inventea-toggle:hover,
+.inventea-toggle:active {
+	outline: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+/**
+ * Forum name and description
+ */
+.inventea-sitename {
+	padding: 70px 35px 35px;
+}
+
+.inventea-sitename span {
+	margin-left: 0;
+}
+
+/**
+ * Footer
+ */
+.inventea-widget {
+	float: none;
+	margin-left: 0 !important;
+}
+
+.inventea-list-widget {
+	margin-bottom: 32px;
+}
+
+.inventea-text-widget {
+	max-width: 100%;
+}
+
+.inventea-text-widget p {
+	margin-bottom: 18px;
+}
+
+/**
+ * Forums and tables
+ */
+.forabg,
+.forumbg,
+.post,
+.panel {
+	margin-right: 0;
+	margin-left: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+ul.topiclist dd,
+ul.topiclist.forums dd.lastpost {
+	display: table-cell;
+}
+
+ul.topiclist dd.topics,
+ul.topiclist dd.posts,
+ul.topiclist dd.lastpost,
+ul.topiclist dd.info,
+ul.topiclist dd.redirect {
+	display: none;
+}
+
+.forabg ul.topiclist li.row dd.lastpost {
+	background-color: #ecf2f7;
+}
+
+.forabg ul.topiclist li.row:nth-child(even) dd.lastpost {
+	background-color: #e4ebf2;
+}
+
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+	ul.topiclist.forums dd.lastpost {
+		display: none;
+	}
+}
+
+/**
+ * Posts and private messages
+ */
+.post,
+.panel {
+	border-radius: 5px;
+}
+
+.post .inner {
+	display: block;
+}
+
+.postprofile,
+.search .postprofile,
+.pm .postprofile,
+.post .postbody {
+	display: block;
+	overflow: hidden;
+	width: auto;
+}
+
+/* User profile */
+.postprofile,
+.pm .postprofile,
+.search .postprofile {
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 0;
+}
+
+.post .postprofile {
+	padding: 18px;
+	margin-bottom: 0;
+	border: 0;
+}
+
+.postprofile dt {
+	display: block;
+	text-align: left;
+}
+
+.postprofile dd.profile-rank {
+	text-align: left;
+}
+
+/* Post message */
+.post .postbody {
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 7px;
+}
+
+.post.bg1 .postbody:before {
+	border-color: transparent transparent #f8f8f8 transparent;
+}
+
+.post.bg2 .postbody:before {
+	border-color: transparent transparent #f2f2f2 transparent;
+}
+
+.post.reported .postbody:before {
+	border-color: transparent transparent #f7ecef transparent;
+}
+
+/* Post message left triangle */
+.post .postbody:before {
+	right: 25px;
+	margin-top: -34px;
+	margin-left: 0;
+	border-width: 0 14px 16px 14px;
+}
+
+.search .postbody {
+	padding: 18px;
+}
+
+/**
+ * Forms
+ */
+fieldset dt,
+fieldset.fields2 dt,
+.section-posting fieldset.fields1 dt,
+.section-posting fieldset.fields2 dt {
+	float: none;
+	width: auto;
+}
+
+/* Additional margin between description and input */
+fieldset dt span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* Reduce input left margin */
+fieldset dd,
+fieldset.fields1 dd,
+fieldset.fields2 dd,
+.section-posting fieldset.fields1 dd,
+.section-posting  fieldset.fields2 dd {
+	margin-left: 0;
+}
+
+input[type="search"] {
+	box-sizing: border-box;
+}
+
+input.inputbox,
+textarea.inputbox {
+	width: 100%;
+}
+
+input.medium {
+	width: 50%;
+}
+
+input.tiny {
+	width: 125px;
+}
+
+#register .inputbox,
+#login .inputbox {
+	width: 100% !important;
+}
